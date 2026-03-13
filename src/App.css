@@ -1,0 +1,502 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.nav-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/**/
+
+.bio-section 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 50px;
+  color: #000; /* Change to white if using a dark background */
+  
+}
+
+.text-wrapper 
+{
+  max-width: 500px;
+  text-align: left;
+   background-color: #ffffff;
+}
+
+.honor-text 
+{
+  color: #a31d1d; /* Red accent color */
+  letter-spacing: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.character-name 
+{
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: 'serif'; /* Or a bold display font */
+}
+
+.character-title 
+{
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.bio-description p 
+{
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.anImageOfACharacter {
+  max-height: 600px; /* Adjust based on your image size */
+  width: auto;
+}
+
+.characterPose
+{
+  max-height: 900px; /* Adjust based on your image size */
+  width: auto;
+}
+
+.flyron-pose {
+  max-height: 1100px;
+  width: auto;
+}
+
+/**/
+
+/* DC-style horizontal header */
+.site-header {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 16px 24px;
+  gap: 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.site-logo {
+  text-decoration: none;
+  color: #000;
+  margin-right: 20px;
+}
+
+.site-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.smash-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: var(--accent, #0066cc);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.nav-label {
+  white-space: nowrap;
+}
+
+.nav-dropdown-icon {
+  font-size: 0.5rem;
+  margin-left: 2px;
+  opacity: 0.8;
+}
+
+/**/
+
+/* Optional: style for the tab content so the grid displays properly */
+.tab-content 
+{
+  display: flex;
+  justify-content: center; /* center the grid horizontally */
+  padding: 20px;
+}
+
+.grid-container 
+{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.grid-item 
+{
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  height: 300px;
+  border-radius: 5px;
+  font-size: 50px;
+  transition: transform 0.2s;
+  overflow: hidden; /* keeps image inside rounded corners */
+}
+
+.grid-item button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: transparent; /* lets the .grid-item green show through if image fails */
+  display: block;
+  overflow: hidden;
+}
+
+.imageOfACharacter
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills the box without distortion */
+    
+    display: block;
+}
+
+.grid-item:hover 
+{
+  transform: scale(1.05);
+}
+
+.logo 
+{
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover 
+{
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover 
+{
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-wrapper {
+  display: flex;
+  overflow-x: hidden;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.gallery-image {
+  /* Adjust these values to your preferred size */
+  width: 400px; 
+  height: 350px;
+  
+  /* This prevents the image from stretching */
+  object-fit: cover; 
+  
+  /* Optional: adds space between images and rounds corners */
+  margin: 5px;
+  border-radius: 5px;
+}
+
+
+.gallery-video {
+  min-width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.arrow {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.search-container 
+{
+  width: 100%;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+.search-input 
+{
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  width: 90%;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+.search-stats 
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 10px;
+}
+
+
+@keyframes logo-spin 
+{
+  from 
+  {
+    transform: rotate(0deg);
+  }
+  to 
+  {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) 
+{
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card 
+{
+  padding: 2em;
+}
+
+.read-the-docs 
+{
+  color: #888;
+}
+
+
+
+
+
+/* Column Gallery */
+.column-gallery-wrapper {
+  padding: 2rem 1rem;
+}
+
+.column-gallery-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.column-gallery {
+  column-count: 3;
+  column-gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.column-gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.column-gallery-item img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.column-gallery-image-button {
+  all: unset;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.gallery-lightbox-image {
+  max-width: min(100%, 1000px);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.55);
+}
+
+.gallery-lightbox-controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  pointer-events: none;
+}
+
+.gallery-lightbox-arrow {
+  pointer-events: auto;
+  background: rgba(26, 26, 26, 0.9);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: background 0.2s, transform 0.05s;
+}
+
+.gallery-lightbox-arrow:hover {
+  background: rgba(51, 51, 51, 0.95);
+}
+
+.gallery-lightbox-arrow:active {
+  transform: translateY(1px);
+}
+
+.column-gallery-caption {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.column-gallery-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.column-gallery-arrows .arrow {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.column-gallery-arrows .arrow:hover:not(:disabled) {
+  background: #333;
+}
+
+.column-gallery-arrows .arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.column-gallery-page-info {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 900px) {
+  .column-gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .column-gallery {
+    column-count: 1;
+  }
+}
+
+/* About page */
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 50vh;
+}
+
+.about-content {
+  max-width: 600px;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  font-family: serif;
+}
+
+.about-description {
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.about-description:last-child {
+  margin-bottom: 0;
+}
