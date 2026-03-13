@@ -14,7 +14,7 @@ import apolloRayFights from '../assets/OtherVideos/ApolloRayFights.mp4';
 import morphoManAnime from '../assets/OtherVideos/MorphoManAnime.mp4';
 import flyRonandApolloRay from '../assets/OtherVideos/FlyRonandApolloRay.mp4';
 
-
+//Photo Gallert for characters
 function PhotoGallery() 
 {
   const scrollRef = useRef(null);
