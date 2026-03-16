@@ -1,9 +1,13 @@
 import { useNavigate } from 'react-router-dom';
-function Stages() 
-{
-    return (
-    <p>Comming Soon</p>
-);
+import '../App.css';
+
+function Stages() {
+  return (
+    <div className="stages-page">
+      <h1 className="stages-title">Stages</h1>
+      <p className="stages-message">Coming Soon</p>
+    </div>
+  );
 }
 
 export default Stages;
