@@ -3,16 +3,19 @@ import '../App.css';
 import apollorayart from '../assets/otherImages/ApolloRayArt.png';
 import cristerart from '../assets/otherImages/CristerArt.png';
 import flyronart from '../assets/otherImages/FlyRonArt.png';
+import flyRonNES from '../assets/otherImages/FlyRonNES.png';
 
 const galleryItems = [
   { img: apollorayart },
   { img: cristerart },
   { img: flyronart },
+  { img: flyRonNES },
 ];
 
 const ITEMS_PER_PAGE = 9;
 
-function Gallery() {
+function Gallery() 
+{
   const [page, setPage] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
   const totalPages = Math.ceil(galleryItems.length / ITEMS_PER_PAGE);
