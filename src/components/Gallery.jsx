@@ -44,9 +44,9 @@ function Gallery()
   return (
     <div className="column-gallery-wrapper">
       <h2 className="column-gallery-title">Gallery</h2>
-      <div className="column-gallery">
+      <div className="gallery-grid">
         {visibleItems.map((item, index) => (
-          <div key={start + index} className="column-gallery-item">
+          <div key={start + index} className="gallery-grid-item">
             <button
               type="button"
               className="column-gallery-image-button"
