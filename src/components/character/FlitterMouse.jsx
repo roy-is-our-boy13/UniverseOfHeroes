@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import React, { useRef } from 'react';
 import '../../App.css'
 import flittermouse from '../../assets/imagesCharacters/FlitterMouse.png';
@@ -48,36 +47,56 @@ function PhotoGallery() {
 
 function FlitterMouse() {
   return (
-    <>
-      <div
-        className="character-page-container"
-        style={{
-          backgroundImage: `url(${wallpaper})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          minHeight: '100vh'
-        }}
-      >
-        <div className="bio-section">
-          <div className="image-wrapper">
-            <img src={flittermouse} alt="Flitter Mouse" className="AcharacterPose" />
-          </div>
-
-          <div className="text-wrapper">
-            <h1 className="character-name">FLITTER MOUSE</h1>
-            <h3 className="character-title">Revered Lin Kuei Warrior</h3>
-            <div className="bio-description">
-              <p>Here goes your character content...</p>
-              <p>Add Flitter Mouse's bio and backstory here.</p>
-            </div>
-          </div>
+    <div className="hero-character-page">
+      <section className="hero-banner">
+        <div className="hero-banner-image">
+          <img src={flittermouse} alt="Flitter Mouse" />
         </div>
-      </div>
-      <div>
+        <div className="hero-banner-info">
+          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <h1 className="hero-banner-name">FLITTER MOUSE</h1>
+          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
+        </div>
+      </section>
+
+      <section className="hero-content">
+        <main className="hero-center">
+          <h2 className="hero-section-title">Biography</h2>
+          <div className="hero-divider" />
+          <div className="hero-bio">
+            <p>Here goes your character content...</p>
+            <p>Add Flitter Mouse&apos;s bio and backstory here.</p>
+          </div>
+        </main>
+
+        <aside className="hero-right">
+          <dl className="hero-stats">
+            <div className="hero-stat">
+              <dt>Universe</dt>
+              <dd>New Universe</dd>
+            </div>
+            <div className="hero-stat">
+              <dt>Aliases</dt>
+              <dd>Flitter Mouse</dd>
+            </div>
+            <div className="hero-stat">
+              <dt>Affiliation</dt>
+              <dd>Unknown</dd>
+            </div>
+            <div className="hero-stat">
+              <dt>Place of Origin</dt>
+              <dd>Unknown</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section className="hero-bottom-gallery">
         <PhotoGallery />
-      </div>
-    </>
+      </section>
+
+      <div className="hero-page-bg" style={{ backgroundImage: `url(${wallpaper})` }} aria-hidden="true" />
+    </div>
   );
 }
 

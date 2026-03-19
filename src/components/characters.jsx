@@ -16,6 +16,7 @@ import screamwave from '../assets/imagesCharacters/ScreamWave.png';
 import ravenvangaurd from '../assets/imagesCharacters/RavenVangaurd.png';
 import redman from '../assets/imagesCharacters/RedMan.png';
 import aegisluminar from '../assets/imagesCharacters/Aegis Luminar.png';
+import charactersTitle from '../assets/otherImages/CharactersTitle.png';
 
 function Characters() 
 {
@@ -50,7 +51,7 @@ function Characters()
     <>
     <div className="characters-wrapper">
       <div className="characters-header">
-        <h2>Characters</h2>
+        <img src={charactersTitle} alt="Characters title" className="characters-title-image" />
         
         {/* 3. The Search Bar */}
         <div className="search-container">
