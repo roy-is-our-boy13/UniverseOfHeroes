@@ -247,6 +247,37 @@
   margin-right: 20px;
 }
 
+.menu-search {
+  display: flex;
+  align-items: center;
+  min-width: 170px;
+  margin-left: auto;
+  position: relative;
+}
+
+.menu-search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 0.85rem;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.menu-search-input {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 8px 10px 8px 30px;
+  font-size: 0.85rem;
+  background: #fff;
+  color: #222;
+}
+
+.menu-search-input:focus {
+  outline: none;
+  border-color: #999;
+}
+
 .site-logo h1 {
   margin: 0;
   font-size: 1.5rem;

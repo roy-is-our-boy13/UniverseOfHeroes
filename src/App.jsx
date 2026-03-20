@@ -86,6 +86,17 @@ function App()
           <h1>Titan Forge</h1>
         </Link>
         <NavigationMenu />
+        <div className="menu-search">
+          <span className="menu-search-icon" aria-hidden>
+            🔍
+          </span>
+          <input
+            type="text"
+            className="menu-search-input"
+            placeholder="Search"
+            aria-label="Search site"
+          />
+        </div>
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
