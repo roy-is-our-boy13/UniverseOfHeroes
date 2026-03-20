@@ -760,3 +760,86 @@
   font-size: 1.1rem;
   color: #666;
 }
+
+/* Comics page */
+.comics-page {
+  padding: 1.25rem 0 2rem;
+}
+
+.comics-page-title {
+  margin: 0 0 1rem;
+  font-size: 1.45rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.comic-card {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.comic-cover-link {
+  display: block;
+  height: 320px;
+  background: #111;
+}
+
+.comic-cover-preview {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.comic-title {
+  margin: 0;
+  padding: 10px 12px 0;
+  font-size: 1rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.comic-subtitle {
+  display: block;
+  font-size: 0.92rem;
+  color: #333;
+  margin-top: 2px;
+}
+
+.comic-creators {
+  margin: 0;
+  padding: 6px 12px 0;
+  font-size: 0.82rem;
+  color: #666;
+  text-align: left;
+}
+
+.comic-read-button {
+  margin: 12px;
+  margin-top: auto;
+  display: inline-block;
+  text-decoration: none;
+  background: #d42026;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 3px;
+  padding: 8px 10px;
+}
+
+.comic-read-button:hover {
+  background: #b8161b;
+}
