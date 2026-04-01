@@ -1,53 +1,9 @@
-import React, { useRef } from 'react';
-import '../../App.css'
+import React from 'react';
+import '../../App.css';
 import crister from '../../assets/imagePose/CristerPose.png';
 import wallpaper from '../../assets/Wallpaper/CristerBackground.png';
-
-
-function PhotoGallery() 
-{
-  const scrollRef = useRef(null);
-
-  const scrollLeft = () => {
-    scrollRef.current?.scrollBy({ left: -320, behavior: "smooth" });
-  };
-
-  const scrollRight = () => {
-    scrollRef.current?.scrollBy({ left: 320, behavior: "smooth" });
-  };
-
-  const images = [
-    "/image1.jpg",
-    "/image2.jpg",
-    "/image3.jpg",
-    "/image4.jpg",
-  ];
-
-  return (
-    <div className="gallery-container">
-      <button className="arrow left" onClick={scrollLeft}>
-        ◀
-      </button>
-
-      <div className="gallery-wrapper" ref={scrollRef}>
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Gallery ${index}`}
-            className="gallery-image"
-          />
-        ))}
-      </div>
-
-      <button className="arrow right" onClick={scrollRight}>
-        ▶
-      </button>
-    </div>
-  );
-}
-
-
+import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
+import galleryData from '../../data/characterGalleries/crister.json';
 
 function Crister() {
   return (
@@ -104,7 +60,7 @@ function Crister() {
       </section>
 
       <section className="hero-bottom-gallery">
-        <PhotoGallery />
+        <CharacterPhotoGallery images={galleryData.gallery} />
       </section>
 
       <div className="hero-page-bg" style={{ backgroundImage: `url(${wallpaper})` }} aria-hidden="true" />

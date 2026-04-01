@@ -1,0 +1,9 @@
+{
+  "characterId": "flittermouse",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Flitter Mouse gallery image 1" },
+    { "src": "/vite.svg", "alt": "Flitter Mouse gallery image 2" },
+    { "src": "/vite.svg", "alt": "Flitter Mouse gallery image 3" },
+    { "src": "/vite.svg", "alt": "Flitter Mouse gallery image 4" }
+  ]
+}

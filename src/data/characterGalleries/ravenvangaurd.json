@@ -1,0 +1,9 @@
+{
+  "characterId": "ravenvangaurd",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Raven Vanguard gallery image 1" },
+    { "src": "/vite.svg", "alt": "Raven Vanguard gallery image 2" },
+    { "src": "/vite.svg", "alt": "Raven Vanguard gallery image 3" },
+    { "src": "/vite.svg", "alt": "Raven Vanguard gallery image 4" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "characterId": "jungletitian",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Jungle Titan gallery image 1" },
+    { "src": "/vite.svg", "alt": "Jungle Titan gallery image 2" },
+    { "src": "/vite.svg", "alt": "Jungle Titan gallery image 3" },
+    { "src": "/vite.svg", "alt": "Jungle Titan gallery image 4" }
+  ]
+}

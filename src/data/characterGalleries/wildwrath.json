@@ -1,0 +1,9 @@
+{
+  "characterId": "wildwrath",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Wild Wrath gallery image 1" },
+    { "src": "/vite.svg", "alt": "Wild Wrath gallery image 2" },
+    { "src": "/vite.svg", "alt": "Wild Wrath gallery image 3" },
+    { "src": "/vite.svg", "alt": "Wild Wrath gallery image 4" }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "characterId": "screamwave",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Scream Wave gallery image 1" },
+    { "src": "/vite.svg", "alt": "Scream Wave gallery image 2" },
+    { "src": "/vite.svg", "alt": "Scream Wave gallery image 3" },
+    { "src": "/vite.svg", "alt": "Scream Wave gallery image 4" }
+  ]
+}

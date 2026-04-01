@@ -1,0 +1,9 @@
+{
+  "characterId": "flyron",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Fly Ron gallery image 1" },
+    { "src": "/vite.svg", "alt": "Fly Ron gallery image 2" },
+    { "src": "/vite.svg", "alt": "Fly Ron gallery image 3" },
+    { "src": "/vite.svg", "alt": "Fly Ron gallery image 4" }
+  ]
+}
