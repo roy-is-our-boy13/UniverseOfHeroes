@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import '../App.css'
 import flyRon1 from '../assets/otherImages/FlyRon1.png';
 import morphoMan1 from '../assets/otherImages/MorphoMan1.png';
@@ -18,6 +18,7 @@ import flyRonandApolloRay from '../assets/OtherVideos/FlyRonandApolloRay.mp4';
 function PhotoGallery() 
 {
   const scrollRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const scrollLeft = () => {
     scrollRef.current?.scrollBy({ left: -320, behavior: "smooth" });
@@ -39,6 +40,17 @@ function PhotoGallery()
       jungleTitian1,
   ];
 
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveIndex(null);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeIndex]);
+
   return (
     <div className="gallery-container">
       <button className="arrow left" onClick={scrollLeft}>
@@ -52,6 +64,7 @@ function PhotoGallery()
             src={img}
             alt={`Gallery ${index}`}
             className="gallery-image"
+            onClick={() => setActiveIndex(index)}
           />
         ))}
       </div>
@@ -59,6 +72,22 @@ function PhotoGallery()
       <button className="arrow right" onClick={scrollRight}>
         ▶
       </button>
+
+      {activeIndex !== null && (
+        <div
+          className="gallery-lightbox"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setActiveIndex(null)}
+        >
+          <img
+            className="gallery-lightbox-image"
+            src={images[activeIndex]}
+            alt={`Enlarged gallery ${activeIndex}`}
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import '../App.css'
 import flyron from '../assets/imagesCharacters/FlyRon.png';
 import crister from '../assets/imagesCharacters/Crister.png';
@@ -21,7 +21,13 @@ import charactersTitle from '../assets/otherImages/CharactersTitle.png';
 function Characters() 
 {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams] = useSearchParams();
+  const urlSearch = searchParams.get('search') || '';
+  const [searchTerm, setSearchTerm] = useState(urlSearch);
+
+  useEffect(() => {
+    setSearchTerm(urlSearch);
+  }, [urlSearch]);
 
   // 1. Centralize your data
   const characterData = [

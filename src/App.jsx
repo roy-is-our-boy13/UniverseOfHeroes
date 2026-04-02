@@ -1,7 +1,7 @@
-import { useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './App.css'
 
@@ -74,6 +74,47 @@ function CopyRights()
   );
 }
 
+function HeaderSearch() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+
+  const urlSearch = searchParams.get('search') || '';
+  const [value, setValue] = useState(urlSearch);
+
+  useEffect(() => {
+    if (location.pathname === '/characters') setValue(urlSearch);
+  }, [location.pathname, urlSearch]);
+
+  const runSearch = () => {
+    const q = value.trim();
+    if (!q) {
+      navigate('/characters');
+      return;
+    }
+    navigate(`/characters?search=${encodeURIComponent(q)}`);
+  };
+
+  return (
+    <div className="menu-search">
+      <span className="menu-search-icon" aria-hidden>
+        🔍
+      </span>
+      <input
+        type="text"
+        className="menu-search-input"
+        placeholder="Search"
+        aria-label="Search characters"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') runSearch();
+        }}
+      />
+    </div>
+  );
+}
+
 function App() 
 {
   const [count, setCount] = useState(0)
@@ -86,17 +127,7 @@ function App()
           <h1>Titan Forge</h1>
         </Link>
         <NavigationMenu />
-        <div className="menu-search">
-          <span className="menu-search-icon" aria-hidden>
-            🔍
-          </span>
-          <input
-            type="text"
-            className="menu-search-input"
-            placeholder="Search"
-            aria-label="Search site"
-          />
-        </div>
+        <HeaderSearch />
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
