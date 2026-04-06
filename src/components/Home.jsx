@@ -9,6 +9,7 @@ import flitterMouse1 from '../assets/otherImages/FlitterMouse1.png';
 import redMan1 from '../assets/otherImages/RedMan1.png';
 import aegisLuminar1 from '../assets/otherImages/AegisLuminar1.png';
 import jungleTitian1 from '../assets/otherImages/JungleTitian1.png';
+import messangerPic from '../assets/otherImages/MessangerPic.png';
 import apolloRayFight from '../assets/OtherVideos/ApolloRayFight.mp4';
 import apolloRayFights from '../assets/OtherVideos/ApolloRayFights.mp4';
 import morphoManAnime from '../assets/OtherVideos/MorphoManAnime.mp4';
@@ -38,6 +39,7 @@ function PhotoGallery()
       redMan1,
       aegisLuminar1,
       jungleTitian1,
+      messangerPic,
   ];
 
   useEffect(() => {

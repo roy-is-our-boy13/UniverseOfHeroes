@@ -4,12 +4,24 @@ import apollorayart from '../assets/otherImages/ApolloRayArt.png';
 import cristerart from '../assets/otherImages/CristerArt.png';
 import flyronart from '../assets/otherImages/FlyRonArt.png';
 import flyRonNES from '../assets/otherImages/FlyRonNES.png';
+import messengerPoster from '../assets/otherImages/MessengerPoster.png';
+import ravenVanguardComicPage from '../assets/otherImages/RavenVanguardComicPage.png';
+import cristerComicPage from '../assets/otherImages/CristerComicPage.png';
+import flyRonComicPage from '../assets/otherImages/FlyRonComicPage.png';
+import apolloRayPoster from '../assets/otherImages/ApolloRayPoster.png';
+import messangerPic2 from '../assets/otherImages/MessangerPic2.png';
 
 const galleryItems = [
   { img: apollorayart },
   { img: cristerart },
   { img: flyronart },
   { img: flyRonNES },
+  { img: messengerPoster },
+  { img: ravenVanguardComicPage },
+  { img: cristerComicPage },
+  { img: flyRonComicPage },
+  { img: apolloRayPoster },
+  { img: messangerPic2 },
 ];
 
 const ITEMS_PER_PAGE = 9;
