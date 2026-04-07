@@ -17,6 +17,7 @@ import ravenvangaurd from '../assets/imagesCharacters/RavenVangaurd.png';
 import redman from '../assets/imagesCharacters/RedMan.png';
 import aegisluminar from '../assets/imagesCharacters/Aegis Luminar.png';
 import charactersTitle from '../assets/otherImages/CharactersTitle.png';
+import characterPlaceholder from '../assets/imageIcon/Character.png';
 
 function Characters() 
 {
@@ -46,6 +47,13 @@ function Characters()
     { name: "Raven Vanguard", img: ravenvangaurd, path: "/ravenvangaurd" },
     { name: "Red Man", img: redman, path: "/redman" },
     { name: "Aegis Luminar", img: aegisluminar, path: "/aegisluminar" },
+    { name: "Michael", img: characterPlaceholder, path: "/michael" },
+    { name: "Gabriel", img: characterPlaceholder, path: "/gabriel" },
+    { name: "Raphael", img: characterPlaceholder, path: "/raphael" },
+    { name: "Uriel", img: characterPlaceholder, path: "/uriel" },
+    { name: "Ariel", img: characterPlaceholder, path: "/ariel" },
+    { name: "Azrael", img: characterPlaceholder, path: "/azrael" },
+    { name: "Chamuel", img: characterPlaceholder, path: "/chamuel" },
   ];
 
   // 2. Filter logic

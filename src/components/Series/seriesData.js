@@ -58,6 +58,7 @@ export const SERIES_BY_SLUG = {
     description:
       'High above the city, FLY RON patrols the skyline—part stunt pilot, part vigilante. When a syndicate threatens innocent lives, he trades calm for courage and proves that HEROES do not need capes to leave a mark.',
     heroImage: flyRonBg,
+    alliesLinks: [{ name: 'Fly Ron', path: '/flyron' }],
     collectedEditions: [
       edition('Fly Ron: City Wings', 'Mar 4, 2025', flyRonCover),
       edition('Fly Ron: Afterburn', 'Jul 18, 2025', flyRonArt),
@@ -69,6 +70,7 @@ export const SERIES_BY_SLUG = {
     description:
       'WILD WRATH channels the fury of the storm. Exiled and underestimated, he returns to settle scores with honor—RAW POWER tempered by a code no villain can break.',
     heroImage: wildWrathBg,
+    alliesLinks: [{ name: 'Wild Wrath', path: '/wildwrath' }],
     collectedEditions: [
       edition('Wild Wrath: Book One', 'Jan 21, 2025', wildWrathCover),
       edition('Wild Wrath: Scorched Earth', 'Jun 9, 2025', wildWrath1),
@@ -80,6 +82,7 @@ export const SERIES_BY_SLUG = {
     description:
       'The RED MAN moves like a warning light—fast, bright, impossible to ignore. In a world of gray alliances, he fights so the TRUTH stays visible.',
     heroImage: redManBg,
+    alliesLinks: [{ name: 'Red Man', path: '/redman' }],
     collectedEditions: [
       edition('Red Man: Crimson Line', 'Feb 11, 2025', redManCover),
       edition('Red Man: Heat Signature', 'Aug 30, 2025', redManBg),
@@ -90,6 +93,16 @@ export const SERIES_BY_SLUG = {
     description:
       'RAVEN VAN GUARD operates where maps end. Espionage, ghosts of old wars, and a conscience that refuses to quit—this series is GRIT, gadgets, and midnight rooftops.',
     heroImage: ravenBg,
+    alliesLinks: [
+      { name: 'Raven Van Guard', path: '/ravenvangaurd' },
+      { name: 'Michael', path: '/michael' },
+      { name: 'Gabriel', path: '/gabriel' },
+      { name: 'Raphael', path: '/raphael' },
+      { name: 'Uriel', path: '/uriel' },
+      { name: 'Ariel', path: '/ariel' },
+      { name: 'Azrael', path: '/azrael' },
+      { name: 'Chamuel', path: '/chamuel' },
+    ],
     collectedEditions: [
       edition('Raven Van Guard: Black File', 'Apr 7, 2025', ravenCover),
       edition('Raven Van Guard: Ghost Signal', 'Sep 22, 2025', ravenBg),
@@ -101,6 +114,7 @@ export const SERIES_BY_SLUG = {
     description:
       'HUMAN STRIKE proves ordinary courage still beats supernatural odds. Every punch is earned; every victory costs something—and the READ never gets easy.',
     heroImage: humanStrikeBg,
+    alliesLinks: [{ name: 'Human Strike', path: '/humanstrike' }],
     collectedEditions: [
       edition('Human Strike: First Contact', 'May 5, 2025', humanStrikeCover),
       edition('Human Strike: Iron Lessons', 'Oct 19, 2025', humanStrikeBg),
@@ -111,6 +125,7 @@ export const SERIES_BY_SLUG = {
     description:
       'CRISTER walks the line between icon and outlaw. Brilliant, stubborn, and haunted by CHOICES that echo across the city—this is street-level mythmaking.',
     heroImage: cristerBg,
+    alliesLinks: [{ name: 'Crister', path: '/crister' }],
     collectedEditions: [
       edition('Crister: Cold Open', 'Mar 28, 2025', cristerCover),
       edition('Crister: Night Markets', 'Jul 7, 2025', cristerArt),
@@ -121,6 +136,7 @@ export const SERIES_BY_SLUG = {
     description:
       'When ancient seals break, the TERRA WARRIORS rise—champions bound to land, sea, and sky. Their battles decide whether the world KEEPS its balance.',
     heroImage: terraBg,
+    showHero: false,
     /** Profile routes match `characters.jsx` (same as the Characters grid). */
     alliesLinks: [
       { name: 'Fly Ron', path: '/flyron' },
@@ -140,6 +156,7 @@ export const SERIES_BY_SLUG = {
     description:
       'MORPHO MAN shifts shape to survive. Identity becomes both weapon and wound in a thriller about who you are when you can be ANYONE.',
     heroImage: morphoBg,
+    alliesLinks: [{ name: 'Morpho Man', path: '/morphoman' }],
     collectedEditions: [
       edition('Morpho Man: Masks', 'Apr 19, 2025', morphoCover),
       edition('Morpho Man: Double Self', 'Sep 3, 2025', morpho1),
@@ -150,6 +167,7 @@ export const SERIES_BY_SLUG = {
     description:
       'Small, quick, and sharper than she looks—FLITTER MOUSE turns scrapyards into workshops and setbacks into WINS. Hopeful, kinetic, and full of heart.',
     heroImage: flitterBg,
+    alliesLinks: [{ name: 'Flitter Mouse', path: '/flittermouse' }],
     collectedEditions: [
       edition('Flitter Mouse: Little Thunder', 'Jan 9, 2025', flitterCover),
       edition('Flitter Mouse: Neon Alley', 'Aug 11, 2025', flitterBg),
@@ -160,6 +178,7 @@ export const SERIES_BY_SLUG = {
     description:
       'REFECTOR bends light and expectation. In a city addicted to surfaces, only he sees what is REAL—and reflects it back until villains cannot hide.',
     heroImage: reflectorPose,
+    alliesLinks: [{ name: 'Refector', path: '/reflector' }],
     collectedEditions: [
       edition('Refector: Mirror Law', 'Mar 15, 2025', reflectorCover),
       edition('Refector: Bright Lies', 'Nov 1, 2025', reflectorPose),
@@ -170,6 +189,7 @@ export const SERIES_BY_SLUG = {
     description:
       'APOLLO RAY brings sunlight to the fight—charisma, precision, and a streak of defiance bright enough to burn through CONSPIRACY and fear.',
     heroImage: apolloBg,
+    alliesLinks: [{ name: 'Apollo Ray', path: '/apolloray' }],
     collectedEditions: [
       edition('Apollo Ray: Dawn Patrol', 'May 27, 2025', apolloCover),
       edition('Apollo Ray: Solar Flare', 'Dec 2, 2025', apolloArt),
@@ -180,6 +200,7 @@ export const SERIES_BY_SLUG = {
     description:
       'Deep green canopy, older magic, and a guardian who will not yield—JUNGLE TITAN is SURVIVAL myth turned modern epic.',
     heroImage: jungleBg,
+    alliesLinks: [{ name: 'Jungle Titan', path: '/jungletitian' }],
     collectedEditions: [
       edition('Jungle Titan: Green Throne', 'Feb 26, 2025', jungleCover),
       edition('Jungle Titan: River of Teeth', 'Oct 8, 2025', jungleBg),
@@ -190,6 +211,7 @@ export const SERIES_BY_SLUG = {
     description:
       'AEGIS LUMINAR carries shields of light—protector, tactician, and last line when darkness masses at the gate. Honor is not passive; it is FORGED.',
     heroImage: aegisBg,
+    alliesLinks: [{ name: 'Aegis Luminar', path: '/aegisluminar' }],
     collectedEditions: [
       edition('Aegis Luminar: Litany', 'Apr 3, 2025', aegisCover),
       edition('Aegis Luminar: Last Bastion', 'Sep 17, 2025', aegisBg),

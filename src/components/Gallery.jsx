@@ -10,6 +10,7 @@ import cristerComicPage from '../assets/otherImages/CristerComicPage.png';
 import flyRonComicPage from '../assets/otherImages/FlyRonComicPage.png';
 import apolloRayPoster from '../assets/otherImages/ApolloRayPoster.png';
 import messangerPic2 from '../assets/otherImages/MessangerPic2.png';
+import flyRonPoseter from '../assets/otherImages/FlyRonPoseter.png';
 
 const galleryItems = [
   { img: apollorayart },
@@ -22,6 +23,7 @@ const galleryItems = [
   { img: flyRonComicPage },
   { img: apolloRayPoster },
   { img: messangerPic2 },
+  { img: flyRonPoseter },
 ];
 
 const ITEMS_PER_PAGE = 9;

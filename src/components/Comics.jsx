@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import { seriesNameToSlug } from './Series/seriesSlugs.js';
@@ -38,10 +38,9 @@ function chunkIntoColumns(items, columnCount = 3) {
   return cols;
 }
 
-/** Three columns: titles in A–Z order, split evenly top-to-bottom per column. */
-const SERIES_COLUMNS = chunkIntoColumns(SERIES_ALL);
-
 function Comics() {
+  const [seriesSearch, setSeriesSearch] = useState('');
+
   const comicFiles = [
     {
       title: 'Cash & Circuits',
@@ -62,6 +61,16 @@ function Comics() {
       file: brokenBadge
     }
   ];
+
+  const filteredSeries = useMemo(() => {
+    const query = seriesSearch.trim().toLowerCase();
+    if (!query) return SERIES_ALL;
+    return SERIES_ALL.filter((name) => name.toLowerCase().includes(query));
+  }, [seriesSearch]);
+
+  const seriesColumns = useMemo(() => chunkIntoColumns(filteredSeries), [filteredSeries]);
+
+  const alphabetChars = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''), '1', '2', '3'];
 
   return (
     <section className="comics-page">
@@ -99,6 +108,35 @@ function Comics() {
 
       <section className="comics-all-series" aria-labelledby="comics-all-series-heading">
         <div className="comics-all-series-inner">
+          <div className="comics-series-index-card">
+            <h3 className="comics-series-index-title">Series Index A-Z</h3>
+            <label htmlFor="series-search-input" className="comics-series-search-label">
+              Search All Series
+            </label>
+            <div className="comics-series-search-wrap">
+              <span className="comics-series-search-icon" aria-hidden>
+                🔍
+              </span>
+              <input
+                id="series-search-input"
+                type="text"
+                className="comics-series-search-input"
+                placeholder="Search"
+                value={seriesSearch}
+                onChange={(e) => setSeriesSearch(e.target.value)}
+              />
+            </div>
+            <div className="comics-series-alpha-row" aria-hidden>
+              <span className="comics-series-alpha-nav is-disabled">Prev</span>
+              {alphabetChars.map((ch) => (
+                <span key={ch} className="comics-series-alpha-char">
+                  {ch}
+                </span>
+              ))}
+              <span className="comics-series-alpha-nav is-disabled">Next</span>
+            </div>
+          </div>
+
           <div className="comics-all-series-header">
             <span className="comics-all-series-accent" aria-hidden="true" />
             <h3 id="comics-all-series-heading" className="comics-all-series-title">
@@ -106,7 +144,7 @@ function Comics() {
             </h3>
           </div>
           <div className="comics-series-columns">
-            {SERIES_COLUMNS.map((column, colIndex) => (
+            {seriesColumns.map((column, colIndex) => (
               <ul key={colIndex} className="comics-series-column">
                 {column.map((name) => (
                   <li key={name}>
@@ -118,6 +156,9 @@ function Comics() {
               </ul>
             ))}
           </div>
+          {filteredSeries.length === 0 && (
+            <p className="comics-series-empty">No series match your search.</p>
+          )}
         </div>
       </section>
     </section>

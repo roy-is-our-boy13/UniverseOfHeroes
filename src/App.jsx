@@ -13,6 +13,7 @@ import SeriesDetail from './components/Series/SeriesDetail.jsx';
 import Characters from './components/characters.jsx';
 import Stages from './components/Stages.jsx';
 import Gallery from './components/Gallery.jsx';
+import Merch from './components/Merch.jsx';
 
 //Chacter Paths
 import FlyRon from './components/character/FlyRon.jsx';
@@ -30,6 +31,13 @@ import ScreamWave from './components/character/ScreamWave.jsx';
 import RavenVangaurd from './components/character/RavenVangaurd.jsx'
 import RedMan from './components/character/RedMan.jsx';
 import AegisLuminar from './components/character/AegisLuminar.jsx';
+import Michael from './components/character/Michael.jsx';
+import Gabriel from './components/character/Gabriel.jsx';
+import Raphael from './components/character/Raphael.jsx';
+import Uriel from './components/character/Uriel.jsx';
+import Ariel from './components/character/Ariel.jsx';
+import Azrael from './components/character/Azrael.jsx';
+import Chamuel from './components/character/Chamuel.jsx';
 
 //Icons
 import home from './assets/imageIcon/Home.png';
@@ -49,6 +57,7 @@ function NavigationMenu()
     { name: 'Comics', path: '/comics', image: comic, color: '#a765d3', dropdown: true },
     { name: 'Stages', path: '/stages', image: stage, color: '#ffaa00' },
     { name: 'Gallery', path: '/gallery', image: gallery, color: '#ffaa00' },
+    { name: 'Merch', path: '/merch', image: gallery, color: '#ff4d6d' },
   ];
 
   return (
@@ -138,6 +147,7 @@ function App()
         <Route path="/characters" element={<Characters />} />
         <Route path="/stages" element={<Stages />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/merch" element={<Merch />} />
 
         <Route path ="/flyron" element={<FlyRon />} />
         <Route path ="/crister" element={<Crister />} />
@@ -154,6 +164,13 @@ function App()
         <Route path ="/ravenvangaurd" element={<RavenVangaurd />} />
         <Route path ="/redman" element={<RedMan />} />
         <Route path ="/aegisluminar" element={<AegisLuminar />} />
+        <Route path ="/michael" element={<Michael />} />
+        <Route path ="/gabriel" element={<Gabriel />} />
+        <Route path ="/raphael" element={<Raphael />} />
+        <Route path ="/uriel" element={<Uriel />} />
+        <Route path ="/ariel" element={<Ariel />} />
+        <Route path ="/azrael" element={<Azrael />} />
+        <Route path ="/chamuel" element={<Chamuel />} />
       </Routes>
         <div>
           <CopyRights />

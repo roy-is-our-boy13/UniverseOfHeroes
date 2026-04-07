@@ -1,0 +1,9 @@
+{
+  "characterId": "chamuel",
+  "gallery": [
+    { "src": "/vite.svg", "alt": "Chamuel gallery image 1" },
+    { "src": "/vite.svg", "alt": "Chamuel gallery image 2" },
+    { "src": "/vite.svg", "alt": "Chamuel gallery image 3" },
+    { "src": "/vite.svg", "alt": "Chamuel gallery image 4" }
+  ]
+}
