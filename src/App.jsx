@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './App.css'
+import { seriesNameToSlug } from './components/Series/seriesSlugs.js';
 
 import Home from './components/Home.jsx';
 // Comcis
@@ -50,11 +51,27 @@ import gallery  from './assets/imageIcon/Gallery.png';
 
 function NavigationMenu() 
 {
+  const comicSeriesTitles = [
+    'Fly Ron',
+    'Wild Wrath',
+    'Red Man',
+    'Raven Van Guard',
+    'Human Strike',
+    'Crister',
+    'Terra Warriors',
+    'Morpho Man',
+    'Flitter Mouse',
+    'Refector',
+    'Apollo Ray',
+    'Jungle Titan',
+    'Aegis Luminar',
+  ];
+
   const navItems = [
     { name: 'Home', path: '/', image: home, color: '#81cad9' },
     { name: 'About', path: '/about', image: about, color: '#ff0000' },
     { name: 'Characters', path: '/characters', image: character, color: '#00ff00' },
-    { name: 'Comics', path: '/comics', image: comic, color: '#a765d3', dropdown: true },
+    { name: 'Comics', path: '/comics', image: comic, color: '#a765d3', dropdownItems: comicSeriesTitles },
     { name: 'Stages', path: '/stages', image: stage, color: '#ffaa00' },
     { name: 'Gallery', path: '/gallery', image: gallery, color: '#ffaa00' },
     { name: 'Merch', path: '/merch', image: gallery, color: '#ff4d6d' },
@@ -63,11 +80,26 @@ function NavigationMenu()
   return (
     <nav className="smash-nav">
       {navItems.map((item) => (
-        <Link key={item.name} to={item.path} className="nav-link" style={{ '--accent': item.color }}>
-          {item.image && <img src={item.image} alt={`${item.name} icon`} className="nav-icon" />}
-          <span className="nav-label">{item.name}</span>
-          {item.dropdown && <span className="nav-dropdown-icon" aria-hidden>▼</span>}
-        </Link>
+        <div key={item.name} className="nav-item">
+          <Link to={item.path} className="nav-link" style={{ '--accent': item.color }}>
+            {item.image && <img src={item.image} alt={`${item.name} icon`} className="nav-icon" />}
+            <span className="nav-label">{item.name}</span>
+            {item.dropdownItems && <span className="nav-dropdown-icon" aria-hidden>▼</span>}
+          </Link>
+          {item.dropdownItems && (
+            <div className="nav-dropdown-menu">
+              {item.dropdownItems.map((title) => (
+                <Link
+                  key={title}
+                  to={`/comics/series/${seriesNameToSlug(title)}`}
+                  className="nav-dropdown-link"
+                >
+                  {title}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       ))}
     </nav>
   );
