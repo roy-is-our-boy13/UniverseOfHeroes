@@ -394,6 +394,286 @@
 }
 
 
+/* Home — What’s New carousel */
+.home-page {
+  text-align: left;
+}
+
+.whats-new {
+  margin: 0 0 2.5rem;
+  max-width: 100%;
+}
+
+.whats-new-banner {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  padding: 1.75rem 1.25rem 1.25rem;
+  isolation: isolate;
+}
+
+.whats-new-chevron {
+  position: absolute;
+  top: -15%;
+  width: 5px;
+  height: 130%;
+  background: linear-gradient(
+    180deg,
+    rgba(176, 160, 220, 0.35) 0%,
+    rgba(176, 160, 220, 0.85) 50%,
+    rgba(176, 160, 220, 0.35) 100%
+  );
+  transform: rotate(28deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.whats-new-chevron--a {
+  left: 6%;
+}
+
+.whats-new-chevron--b {
+  left: 9%;
+}
+
+.whats-new-banner-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(120px, 34%);
+  gap: 0.5rem 1.25rem;
+  align-items: end;
+}
+
+.whats-new-left {
+  min-width: 0;
+}
+
+.whats-new-covers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 520px;
+}
+
+.whats-new-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  border-radius: 1px;
+}
+
+.whats-new-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem 1rem;
+  margin-top: 1.35rem;
+}
+
+.whats-new-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.whats-new-date-bar {
+  flex: 1;
+  min-width: 180px;
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #111;
+  padding: 0.5rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.whats-new-date-text {
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.whats-new-hero-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 200px;
+}
+
+.whats-new-hero {
+  width: 100%;
+  max-height: min(320px, 38vw);
+  height: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
+}
+
+.whats-new-controls {
+  display: flex;
+  align-items: stretch;
+  margin-top: 0;
+}
+
+.whats-new-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 52px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 11px;
+  background: #111;
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.15s, transform 0.12s;
+}
+
+.whats-new-arrow:hover {
+  background: #000;
+}
+
+.whats-new-arrow:active {
+  transform: scale(0.97);
+}
+
+.whats-new-arrow-icon {
+  display: block;
+  width: 0;
+  height: 0;
+  flex-shrink: 0;
+}
+
+.whats-new-arrow-icon--left {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #fff;
+  margin-left: -3px;
+}
+
+.whats-new-arrow-icon--right {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #fff;
+  margin-right: -3px;
+}
+
+.whats-new-arrow:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+.whats-new-tagline {
+  flex: 1;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.whats-new-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.whats-new-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.whats-new-dot:hover {
+  background: #999;
+}
+
+.whats-new-dot.is-active {
+  background: #444;
+  transform: scale(1.1);
+}
+
+.whats-new-dot:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .whats-new-banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whats-new-hero-wrap {
+    justify-content: center;
+    min-height: 160px;
+    order: -1;
+  }
+
+  .whats-new-hero {
+    max-height: 220px;
+  }
+
+  .whats-new-covers {
+    max-width: none;
+  }
+
+  .whats-new-heading-row {
+    flex-direction: column;
+  }
+
+  .whats-new-date-bar {
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .whats-new-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .whats-new-arrow {
+    order: 1;
+  }
+
+  .whats-new-tagline {
+    order: 0;
+    flex: 1 1 100%;
+  }
+}
+
 .gallery-container {
   display: flex;
   align-items: center;
@@ -843,4 +1123,337 @@
 
 .comic-read-button:hover {
   background: #b8161b;
+}
+
+/* Comics — All Series list (under PDF cards) */
+.comics-all-series {
+  margin-top: 2.75rem;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding: 2.75rem max(1.5rem, calc(50vw - 50% + 1.5rem)) 3rem;
+  background: #f4f4f4;
+  border-top: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.comics-all-series-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.comics-all-series-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 1.85rem;
+}
+
+.comics-all-series-accent {
+  width: 11px;
+  flex-shrink: 0;
+  align-self: stretch;
+  min-height: 1.05em;
+  max-height: 1.35em;
+  margin-top: 0.06em;
+  background: #0066cc;
+  border-radius: 2px;
+}
+
+.comics-all-series-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111;
+  line-height: 1.15;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.comics-series-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem 2.5rem;
+}
+
+.comics-series-column {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comics-series-column li {
+  margin: 0 0 0.45rem;
+}
+
+.comics-series-link {
+  all: unset;
+  cursor: pointer;
+  display: inline;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: #4a90c8;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.comics-series-link:hover {
+  color: #3d7eb8;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .comics-all-series {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .comics-series-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Series detail (/comics/series/:slug) */
+.series-detail-page {
+  background: #fff;
+  padding-bottom: 3rem;
+}
+
+.series-detail-hero {
+  width: 100%;
+  max-height: 360px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.series-detail-hero-img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.series-detail-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.75rem 1.5rem 0;
+  box-sizing: border-box;
+}
+
+.series-detail-back-link {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4a90c8;
+  text-decoration: none;
+}
+
+.series-detail-back-link:hover {
+  color: #3d7eb8;
+  text-decoration: underline;
+}
+
+.series-detail-title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.series-detail-description {
+  margin: 0 0 1.5rem;
+  max-width: 720px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+.series-faction-tabs {
+  margin: 0 0 2.5rem;
+  max-width: 720px;
+}
+
+.series-faction-tablist {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 1rem;
+}
+
+.series-faction-tab {
+  appearance: none;
+  margin: 0;
+  padding: 0.65rem 1.35rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.series-faction-tab:hover {
+  color: #111;
+}
+
+.series-faction-tab.is-active {
+  color: #111;
+  border-bottom-color: #0066cc;
+}
+
+.series-faction-tab:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.series-faction-panel {
+  margin: 0;
+  padding: 0;
+  min-height: 3rem;
+}
+
+.series-faction-panel-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #444;
+}
+
+.series-faction-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.series-faction-links li {
+  margin: 0 0 0.5rem;
+}
+
+.series-faction-links li:last-child {
+  margin-bottom: 0;
+}
+
+.series-faction-character-link {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: #4a90c8;
+  text-decoration: none;
+}
+
+.series-faction-character-link:hover {
+  color: #3d7eb8;
+  text-decoration: underline;
+}
+
+.series-detail-section-heading {
+  margin: 0 0 1.35rem;
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #111;
+}
+
+.series-editions-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.35rem 1.25rem;
+}
+
+.series-edition-card {
+  min-width: 0;
+}
+
+.series-edition-cover-frame {
+  display: block;
+  margin-bottom: 0.65rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  aspect-ratio: 2 / 3;
+}
+
+.series-edition-cover--linked {
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.series-edition-cover--linked:hover {
+  border-color: #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.series-edition-cover-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.series-edition-title {
+  display: block;
+  margin: 0 0 0.35rem;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  font-weight: 500;
+  color: #4a90c8;
+  text-decoration: none;
+}
+
+.series-edition-title:hover {
+  color: #3d7eb8;
+  text-decoration: underline;
+}
+
+.series-edition-title--static {
+  cursor: default;
+  text-decoration: none;
+}
+
+.series-edition-title--static:hover {
+  text-decoration: none;
+  color: #4a90c8;
+}
+
+.series-edition-date {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #777;
+  line-height: 1.3;
+}
+
+@media (max-width: 1100px) {
+  .series-editions-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .series-detail-hero-img {
+    height: 220px;
+  }
+
+  .series-detail-hero {
+    max-height: 220px;
+  }
+
+  .series-editions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

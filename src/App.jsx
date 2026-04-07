@@ -9,6 +9,7 @@ import Home from './components/Home.jsx';
 // Comcis
 import About from './components/About.jsx';
 import Comics from './components/Comics.jsx';
+import SeriesDetail from './components/Series/SeriesDetail.jsx';
 import Characters from './components/characters.jsx';
 import Stages from './components/Stages.jsx';
 import Gallery from './components/Gallery.jsx';
@@ -132,6 +133,7 @@ function App()
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/comics" element={<Comics />} />
+        <Route path="/comics/series/:seriesSlug" element={<SeriesDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/characters" element={<Characters />} />
         <Route path="/stages" element={<Stages />} />

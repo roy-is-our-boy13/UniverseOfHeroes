@@ -1,8 +1,45 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../App.css';
+import { seriesNameToSlug } from './Series/seriesSlugs.js';
 import cashCircuits from '../assets/Comics/Cash & Circuits_ Bank Heist Gone Rogue.pdf';
 import shadowBlade from '../assets/Comics/Shadow Blade_ Ninja Hunter.pdf';
 import brokenBadge from '../assets/Comics/Shadows of the Broken Badge.pdf';
+
+const SERIES_ALL = [
+  'Fly Ron',
+  'Wild Wrath',
+  'Red Man',
+  'Raven Van Guard',
+  'Human Strike',
+  'Crister',
+  'Terra Warriors',
+  'Morpho Man',
+  'Flitter Mouse',
+  'Refector',
+  'Apollo Ray',
+  'Jungle Titan',
+  'Aegis Luminar',
+];
+
+function chunkIntoColumns(items, columnCount = 3) {
+  const n = items.length;
+  if (n === 0) return Array.from({ length: columnCount }, () => []);
+  const base = Math.floor(n / columnCount);
+  const remainder = n % columnCount;
+  const sorted = [...items].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
+  const cols = [];
+  let start = 0;
+  for (let c = 0; c < columnCount; c++) {
+    const size = c < remainder ? base + 1 : base;
+    cols.push(sorted.slice(start, start + size));
+    start += size;
+  }
+  return cols;
+}
+
+/** Three columns: titles in A–Z order, split evenly top-to-bottom per column. */
+const SERIES_COLUMNS = chunkIntoColumns(SERIES_ALL);
 
 function Comics() {
   const comicFiles = [
@@ -59,6 +96,30 @@ function Comics() {
           </article>
         ))}
       </div>
+
+      <section className="comics-all-series" aria-labelledby="comics-all-series-heading">
+        <div className="comics-all-series-inner">
+          <div className="comics-all-series-header">
+            <span className="comics-all-series-accent" aria-hidden="true" />
+            <h3 id="comics-all-series-heading" className="comics-all-series-title">
+              All Series
+            </h3>
+          </div>
+          <div className="comics-series-columns">
+            {SERIES_COLUMNS.map((column, colIndex) => (
+              <ul key={colIndex} className="comics-series-column">
+                {column.map((name) => (
+                  <li key={name}>
+                    <Link to={`/comics/series/${seriesNameToSlug(name)}`} className="comics-series-link">
+                      {name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
