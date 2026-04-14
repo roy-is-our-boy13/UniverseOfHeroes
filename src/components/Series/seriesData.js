@@ -77,6 +77,20 @@ export const SERIES_BY_SLUG = {
       edition('Shadow Blade', 'Nov 14, 2025', wildWrath1, shadowBlade),
     ],
   },
+  'wild-reign': {
+    title: 'Wild Reign',
+    description:
+      'WILD REIGN chronicles a feral uprising in the frontier zones, where fractured alliances and primal power decide who leads and who survives.',
+    heroImage: wildWrathBg,
+    alliesLinks: [
+      { name: 'Roaring Lion', path: '/roaringlion' },
+      { name: 'Howl Wolf', path: '/howlwolf' },
+    ],
+    collectedEditions: [
+      edition('Wild Reign: Rise of Claws', 'Jan 15, 2026', wildWrathCover),
+      edition('Wild Reign: Crown of Ash', 'Apr 19, 2026', wildWrath1),
+    ],
+  },
   'red-man': {
     title: 'Red Man',
     description:

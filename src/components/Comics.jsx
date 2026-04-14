@@ -20,6 +20,7 @@ const SERIES_ALL = [
   'Apollo Ray',
   'Jungle Titan',
   'Aegis Luminar',
+  'Wild Reign',
 ];
 
 function chunkIntoColumns(items, columnCount = 3) {
@@ -40,6 +41,7 @@ function chunkIntoColumns(items, columnCount = 3) {
 
 function Comics() {
   const [seriesSearch, setSeriesSearch] = useState('');
+  const [activeLetter, setActiveLetter] = useState('');
 
   const comicFiles = [
     {
@@ -64,9 +66,13 @@ function Comics() {
 
   const filteredSeries = useMemo(() => {
     const query = seriesSearch.trim().toLowerCase();
-    if (!query) return SERIES_ALL;
-    return SERIES_ALL.filter((name) => name.toLowerCase().includes(query));
-  }, [seriesSearch]);
+    const afterSearch = !query ? SERIES_ALL : SERIES_ALL.filter((name) => name.toLowerCase().includes(query));
+
+    if (!activeLetter) return afterSearch;
+    if (activeLetter === '#') return afterSearch;
+
+    return afterSearch.filter((name) => name.toUpperCase().startsWith(activeLetter));
+  }, [seriesSearch, activeLetter]);
 
   const seriesColumns = useMemo(() => chunkIntoColumns(filteredSeries), [filteredSeries]);
 
@@ -127,13 +133,18 @@ function Comics() {
               />
             </div>
             <div className="comics-series-alpha-row" aria-hidden>
-              <span className="comics-series-alpha-nav is-disabled">Prev</span>
+              <span className="comics-series-alpha-nav is-disabled"></span>
               {alphabetChars.map((ch) => (
-                <span key={ch} className="comics-series-alpha-char">
+                <button
+                  key={ch}
+                  type="button"
+                  className={`comics-series-alpha-char${activeLetter === ch ? ' is-active' : ''}`}
+                  onClick={() => setActiveLetter((prev) => (prev === ch ? '' : ch))}
+                >
                   {ch}
-                </span>
+                </button>
               ))}
-              <span className="comics-series-alpha-nav is-disabled">Next</span>
+              <span className="comics-series-alpha-nav is-disabled"></span>
             </div>
           </div>
 

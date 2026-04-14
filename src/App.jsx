@@ -47,6 +47,7 @@ import about from './assets/imageIcon/Icon.png';
 import character from './assets/imageIcon/Character.png';
 import stage  from './assets/imageIcon/Stage.png';
 import gallery  from './assets/imageIcon/Gallery.png';
+import merch from './assets/imageIcon/Merch.png';
 
 
 function NavigationMenu() 
@@ -54,6 +55,7 @@ function NavigationMenu()
   const comicSeriesTitles = [
     'Fly Ron',
     'Wild Wrath',
+    'Wild Reign',
     'Red Man',
     'Raven Van Guard',
     'Human Strike',
@@ -74,7 +76,7 @@ function NavigationMenu()
     { name: 'Comics', path: '/comics', image: comic, color: '#a765d3', dropdownItems: comicSeriesTitles },
     { name: 'Stages', path: '/stages', image: stage, color: '#ffaa00' },
     { name: 'Gallery', path: '/gallery', image: gallery, color: '#ffaa00' },
-    { name: 'Merch', path: '/merch', image: gallery, color: '#ff4d6d' },
+    { name: 'Merch', path: '/merch', image: merch, color: '#ff4d6d' },
   ];
 
   return (
@@ -205,6 +207,7 @@ function App()
         <Route path ="/chamuel" element={<Chamuel />} />
       </Routes>
         <div>
+
           <CopyRights />
         </div>
       </Router>
