@@ -1084,11 +1084,58 @@
 
 /* Merch page */
 .merch-page {
-  display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  gap: 20px;
-  align-items: start;
-  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: stretch;
+  padding-top: 0;
+}
+
+.merch-top-nav {
+  margin-left: -2rem;
+  margin-right: -2rem;
+  width: calc(100% + 4rem);
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.merch-top-nav-inner {
+  max-width: 100%;
+  padding: 0.65rem 2rem;
+}
+
+.merch-top-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.merch-top-menu-item {
+  flex: 0 0 auto;
+}
+
+.merch-top-menu-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0;
+  text-decoration: none;
+  color: #111;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.merch-top-menu-link:hover {
+  color: #333;
 }
 
 .merch-sidebar {
@@ -1268,13 +1315,9 @@
 }
 
 @media (max-width: 900px) {
-  .merch-page {
-    grid-template-columns: 1fr;
-  }
-
-  .merch-sidebar {
-    border-right: none;
-    padding-right: 0;
+  .merch-top-menu-list {
+    gap: 0.35rem 1rem;
+    justify-content: flex-start;
   }
 
   .merch-blog-grid {

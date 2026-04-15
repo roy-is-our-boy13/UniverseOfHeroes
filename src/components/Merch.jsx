@@ -1,33 +1,25 @@
 import React from 'react';
 import '../App.css';
+import merchItems from '../data/merchItems.json';
 
 function Merch() {
-  const menuItems = [
-    'Cothes',
-    'Toys',
-  ];
-  const merchItems = [
-    { name: 'Spawn Power Meter T-Shirt Black MTS Exclusive', price: '$24.99 - $29.99', tag: 'Shirt' },
-    { name: 'Spawn #12 Skull Orb T-Shirt Black MTS Exclusive', price: '$24.99 - $29.99', tag: 'Shirt' },
-    { name: 'Spawn Negative Corner Box T-Shirt Black MTS Exclusive', price: '$24.99 - $29.99', tag: 'Shirt' },
-    { name: 'Batwing (The Flash Movie) Gold Label Vehicle', price: '$179.99', oldPrice: '$249.99', tag: 'Vehicle' },
-  ];
+  const menuItems = ['Men','Women','Kids', 'Toys', 'Games', 'Accessories'];
 
   return (
     <section className="merch-page">
-      <aside className="merch-sidebar">
-        <nav aria-label="Merch categories">
-          <ul className="merch-menu-list">
+      <header className="merch-top-nav">
+        <nav aria-label="Merch categories" className="merch-top-nav-inner">
+          <ul className="merch-top-menu-list">
             {menuItems.map((item) => (
-              <li key={item} className="merch-menu-item">
-                <a href="#" className="merch-menu-link">
-                  <span>{item}</span>
+              <li key={item} className="merch-top-menu-item">
+                <a href="#" className="merch-top-menu-link">
+                  {item}
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-      </aside>
+      </header>
 
       <div className="merch-main">
         <section className="merch-products-row" aria-label="Featured merch">
