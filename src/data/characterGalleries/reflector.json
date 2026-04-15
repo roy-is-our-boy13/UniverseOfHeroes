@@ -1,9 +1,9 @@
 {
   "characterId": "reflector",
   "gallery": [
-    { "src": "/vite.svg", "alt": "Reflector gallery image 1" },
-    { "src": "/vite.svg", "alt": "Reflector gallery image 2" },
-    { "src": "/vite.svg", "alt": "Reflector gallery image 3" },
-    { "src": "/vite.svg", "alt": "Reflector gallery image 4" }
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Reflector gallery image 1" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Reflector gallery image 2" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Reflector gallery image 3" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Reflector gallery image 4" }
   ]
 }

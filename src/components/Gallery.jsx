@@ -1,30 +1,25 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
-import apollorayart from '../assets/otherImages/ApolloRayArt.png';
-import cristerart from '../assets/otherImages/CristerArt.png';
-import flyronart from '../assets/otherImages/FlyRonArt.png';
-import flyRonNES from '../assets/otherImages/FlyRonNES.png';
-import messengerPoster from '../assets/otherImages/MessengerPoster.png';
-import ravenVanguardComicPage from '../assets/otherImages/RavenVanguardComicPage.png';
-import cristerComicPage from '../assets/otherImages/CristerComicPage.png';
-import flyRonComicPage from '../assets/otherImages/FlyRonComicPage.png';
-import apolloRayPoster from '../assets/otherImages/ApolloRayPoster.png';
-import messangerPic2 from '../assets/otherImages/MessangerPic2.png';
-import flyRonPoseter from '../assets/otherImages/FlyRonPoseter.png';
+import mainGalleryData from '../data/mainGallery.json';
 
-const galleryItems = [
-  { img: apollorayart },
-  { img: cristerart },
-  { img: flyronart },
-  { img: flyRonNES },
-  { img: messengerPoster },
-  { img: ravenVanguardComicPage },
-  { img: cristerComicPage },
-  { img: flyRonComicPage },
-  { img: apolloRayPoster },
-  { img: messangerPic2 },
-  { img: flyRonPoseter },
-];
+const otherImageUrlByFile = Object.fromEntries(
+  Object.entries(
+    import.meta.glob('../assets/otherImages/*.png', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
+  ).map(([path, url]) => [path.split('/').pop(), url])
+);
+
+const galleryItems = mainGalleryData.gallery.map((item) => {
+  const file = item.src.replace(/^.*\//, '');
+  const img = otherImageUrlByFile[file];
+  if (img == null) {
+    throw new Error(`Gallery: missing asset otherImages/${file}`);
+  }
+  return { img, alt: item.alt };
+});
 
 const ITEMS_PER_PAGE = 9;
 
@@ -65,9 +60,9 @@ function Gallery()
               type="button"
               className="column-gallery-image-button"
               onClick={() => setActiveIndex(start + index)}
-              aria-label="Open image"
+              aria-label={`Open image: ${item.alt}`}
             >
-              <img src={item.img} alt="Gallery item" />
+              <img src={item.img} alt={item.alt} />
             </button>
           </div>
         ))}
@@ -104,7 +99,7 @@ function Gallery()
           <img
             className="gallery-lightbox-image"
             src={galleryItems[activeIndex]?.img}
-            alt="Enlarged gallery item"
+            alt={galleryItems[activeIndex]?.alt ?? 'Gallery image'}
             onClick={(e) => e.stopPropagation()}
           />
           <div className="gallery-lightbox-controls" onClick={(e) => e.stopPropagation()}>

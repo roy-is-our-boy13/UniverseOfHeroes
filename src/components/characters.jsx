@@ -1,23 +1,19 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import '../App.css'
-import flyron from '../assets/imagesCharacters/FlyRon.png';
-import crister from '../assets/imagesCharacters/Crister.png';
-import wildwrath from '../assets/imagesCharacters/WildWrath.png';
-import humanstrike from  '../assets/imagesCharacters/HumanStrike.png';
-import reflector from '../assets/imagesCharacters/Reflector.png';
-import apolloray from '../assets/imagesCharacters/ApolloRay.png';
-import morphoman from '../assets/imagesCharacters/MorphoMan.png';
-import flittermouse from '../assets/imagesCharacters/FlitterMouse.png';
-import roaringlion from '../assets/imagesCharacters/RoaringLion.png';
-import jungletitan from '../assets/imagesCharacters/JungleTitan.png';
-import howlwolf from '../assets/imagesCharacters/HowlWolf.png';
-import screamwave from '../assets/imagesCharacters/ScreamWave.png';
-import ravenvangaurd from '../assets/imagesCharacters/RavenVangaurd.png';
-import redman from '../assets/imagesCharacters/RedMan.png';
-import aegisluminar from '../assets/imagesCharacters/Aegis Luminar.png';
+import charactersPage from '../data/charactersPage.json';
 import charactersTitle from '../assets/otherImages/CharactersTitle.png';
 import characterPlaceholder from '../assets/imageIcon/Character.png';
+
+const imagesCharacterUrlByFile = Object.fromEntries(
+  Object.entries(
+    import.meta.glob('../assets/imagesCharacters/*.png', {
+      eager: true,
+      query: '?url',
+      import: 'default',
+    })
+  ).map(([path, url]) => [path.split('/').pop(), url])
+);
 
 function Characters() 
 {
@@ -30,31 +26,16 @@ function Characters()
     setSearchTerm(urlSearch);
   }, [urlSearch]);
 
-  // 1. Centralize your data
-  const characterData = [
-    { name: "Fly Ron", img: flyron, path: "/flyron" },
-    { name: "Crister", img: crister, path: "/crister" },
-    { name: "Wild Wrath", img: wildwrath, path: "/wildwrath" },
-    { name: "Human Strike", img: humanstrike, path: "/humanstrike" },
-    { name: "Reflector", img: reflector, path: "/reflector" },
-    { name: "Apollo Ray", img: apolloray, path: "/apolloray" },
-    { name: "Morpho Man", img: morphoman, path: "/morphoman" },
-    { name: "Flitter Mouse", img: flittermouse, path: "/flittermouse" },
-    { name: "Roaring Lion", img: roaringlion, path: "/roaringlion" },
-    { name: "Jungle Titan", img: jungletitan, path: "/jungletitan" },
-    { name: "Howl Wolf", img: howlwolf, path: "/howlwolf" },
-    { name: "Scream Wave", img: screamwave, path: "/screamwave" },
-    { name: "Raven Vanguard", img: ravenvangaurd, path: "/ravenvangaurd" },
-    { name: "Red Man", img: redman, path: "/redman" },
-    { name: "Aegis Luminar", img: aegisluminar, path: "/aegisluminar" },
-    { name: "Michael", img: characterPlaceholder, path: "/michael" },
-    { name: "Gabriel", img: characterPlaceholder, path: "/gabriel" },
-    { name: "Raphael", img: characterPlaceholder, path: "/raphael" },
-    { name: "Uriel", img: characterPlaceholder, path: "/uriel" },
-    { name: "Ariel", img: characterPlaceholder, path: "/ariel" },
-    { name: "Azrael", img: characterPlaceholder, path: "/azrael" },
-    { name: "Chamuel", img: characterPlaceholder, path: "/chamuel" },
-  ];
+  const characterData = charactersPage.characters.map((c) => {
+    if (!c.imageFile) {
+      return { name: c.name, path: c.path, img: characterPlaceholder };
+    }
+    const img = imagesCharacterUrlByFile[c.imageFile];
+    if (img == null) {
+      throw new Error(`Characters page: missing asset imagesCharacters/${c.imageFile}`);
+    }
+    return { name: c.name, path: c.path, img };
+  });
 
   // 2. Filter logic
   const filteredCharacters = characterData.filter((char) =>

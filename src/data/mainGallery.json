@@ -1,0 +1,16 @@
+{
+  "galleryId": "main",
+  "gallery": [
+    { "src": "../assets/otherImages/ApolloRayArt.png", "alt": "Apollo Ray artwork" },
+    { "src": "../assets/otherImages/CristerArt.png", "alt": "Crister artwork" },
+    { "src": "../assets/otherImages/FlyRonArt.png", "alt": "Fly Ron artwork" },
+    { "src": "../assets/otherImages/FlyRonNES.png", "alt": "Fly Ron NES-style artwork" },
+    { "src": "../assets/otherImages/MessengerPoster.png", "alt": "Messenger poster" },
+    { "src": "../assets/otherImages/RavenVanguardComicPage.png", "alt": "Raven Vanguard comic page" },
+    { "src": "../assets/otherImages/CristerComicPage.png", "alt": "Crister comic page" },
+    { "src": "../assets/otherImages/FlyRonComicPage.png", "alt": "Fly Ron comic page" },
+    { "src": "../assets/otherImages/ApolloRayPoster.png", "alt": "Apollo Ray poster" },
+    { "src": "../assets/otherImages/MessangerPic2.png", "alt": "Messenger illustration" },
+    { "src": "../assets/otherImages/FlyRonPoseter.png", "alt": "Fly Ron poster" }
+  ]
+}

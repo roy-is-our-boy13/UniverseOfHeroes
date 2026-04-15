@@ -1,9 +1,9 @@
 {
   "characterId": "screamwave",
   "gallery": [
-    { "src": "/vite.svg", "alt": "Scream Wave gallery image 1" },
-    { "src": "/vite.svg", "alt": "Scream Wave gallery image 2" },
-    { "src": "/vite.svg", "alt": "Scream Wave gallery image 3" },
-    { "src": "/vite.svg", "alt": "Scream Wave gallery image 4" }
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Scream Wave gallery image 1" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Scream Wave gallery image 2" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Scream Wave gallery image 3" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Scream Wave gallery image 4" }
   ]
 }

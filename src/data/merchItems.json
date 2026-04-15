@@ -2,31 +2,43 @@
   {
     "name": "Fly Ron Power Meter T-Shirt Green MTS Exclusive",
     "price": "$24.99 - $29.99",
-    "tag": "Shirt"
+    "tag": "Shirt",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
   },
   {
     "name": "Fly Ron #12 Skull Orb T-Shirt Green MTS Exclusive",
     "price": "$24.99 - $29.99",
-    "tag": "Shirt"
+    "tag": "Shirt",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
   },
   {
     "name": "Fly Ron Negative Corner Box T-Shirt Green MTS Exclusive",
     "price": "$24.99 - $29.99",
-    "tag": "Shirt"
+    "tag": "Shirt",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
   },
   {
     "name": "Fly Ron Action Figure",
     "price": "$29.99",
-    "tag": "Figure"
+    "tag": "Figure",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
   },
   {
     "name": "Wild Wrath Action Figure",
     "price": "$29.99",
-    "tag": "Figure"
+    "tag": "Figure",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
   },
   {
     "name": "Crister Action Figure",
     "price": "$29.99",
-    "tag": "Figure"
+    "tag": "Figure",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
+  },
+  {
+    "name": "Artisan Spice Collection",
+    "price": "$34.99",
+    "tag": "Gourmet",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg"
   }
 ]

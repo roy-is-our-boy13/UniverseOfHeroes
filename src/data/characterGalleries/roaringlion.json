@@ -1,9 +1,9 @@
 {
   "characterId": "roaringlion",
   "gallery": [
-    { "src": "/vite.svg", "alt": "Roaring Lion gallery image 1" },
-    { "src": "/vite.svg", "alt": "Roaring Lion gallery image 2" },
-    { "src": "/vite.svg", "alt": "Roaring Lion gallery image 3" },
-    { "src": "/vite.svg", "alt": "Roaring Lion gallery image 4" }
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Roaring Lion gallery image 1" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Roaring Lion gallery image 2" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Roaring Lion gallery image 3" },
+    { "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg", "alt": "Roaring Lion gallery image 4" }
   ]
 }

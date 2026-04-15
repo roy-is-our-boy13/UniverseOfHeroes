@@ -1,0 +1,26 @@
+{
+  "characters": [
+    { "name": "Fly Ron", "path": "/flyron", "imageFile": "FlyRon.png" },
+    { "name": "Crister", "path": "/crister", "imageFile": "Crister.png" },
+    { "name": "Wild Wrath", "path": "/wildwrath", "imageFile": "WildWrath.png" },
+    { "name": "Human Strike", "path": "/humanstrike", "imageFile": "HumanStrike.png" },
+    { "name": "Reflector", "path": "/reflector", "imageFile": "Reflector.png" },
+    { "name": "Apollo Ray", "path": "/apolloray", "imageFile": "ApolloRay.png" },
+    { "name": "Morpho Man", "path": "/morphoman", "imageFile": "MorphoMan.png" },
+    { "name": "Flitter Mouse", "path": "/flittermouse", "imageFile": "FlitterMouse.png" },
+    { "name": "Roaring Lion", "path": "/roaringlion", "imageFile": "RoaringLion.png" },
+    { "name": "Jungle Titan", "path": "/jungletitian", "imageFile": "JungleTitan.png" },
+    { "name": "Howl Wolf", "path": "/howlwolf", "imageFile": "HowlWolf.png" },
+    { "name": "Scream Wave", "path": "/screamwave", "imageFile": "ScreamWave.png" },
+    { "name": "Raven Vanguard", "path": "/ravenvangaurd", "imageFile": "RavenVangaurd.png" },
+    { "name": "Red Man", "path": "/redman", "imageFile": "RedMan.png" },
+    { "name": "Aegis Luminar", "path": "/aegisluminar", "imageFile": "Aegis Luminar.png" },
+    { "name": "Michael", "path": "/michael" },
+    { "name": "Gabriel", "path": "/gabriel" },
+    { "name": "Raphael", "path": "/raphael" },
+    { "name": "Uriel", "path": "/uriel" },
+    { "name": "Ariel", "path": "/ariel" },
+    { "name": "Azrael", "path": "/azrael" },
+    { "name": "Chamuel", "path": "/chamuel" }
+  ]
+}
