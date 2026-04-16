@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import ravenvangaurd from '../../assets/imagesCharacters/RavenVangaurd.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/ravenvangaurd.json';
@@ -9,9 +9,7 @@ function RavenVangaurd() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={ravenvangaurd} alt="Raven Vanguard" />
-        </div>
+        <CharacterHeroImage characterId="ravenvangaurd" alt="Raven Vanguard" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">RAVEN VANGUARD</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import morphoman from '../../assets/imagePose/MorphoManPose.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/MorphoManBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/morphoman.json';
@@ -9,9 +9,7 @@ function MorphoMan() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={morphoman} alt="Morpho Man" />
-        </div>
+        <CharacterHeroImage characterId="morphoman" alt="Morpho Man" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">MORPHO MAN</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import screamwave from '../../assets/imagesCharacters/ScreamWave.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/screamwave.json';
@@ -9,9 +9,7 @@ function ScreamWave() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={screamwave} alt="Scream Wave" />
-        </div>
+        <CharacterHeroImage characterId="screamwave" alt="Scream Wave" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">SCREAM WAVE</h1>

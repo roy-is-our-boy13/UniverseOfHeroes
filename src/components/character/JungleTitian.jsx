@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import jungletitan from '../../assets/imagesCharacters/JungleTitan.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/jungletitian.json';
@@ -9,9 +9,7 @@ function JungleTitian() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={jungletitan} alt="Jungle Titan" />
-        </div>
+        <CharacterHeroImage characterId="jungletitian" alt="Jungle Titan" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">JUNGLE TITAN</h1>

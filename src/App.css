@@ -119,6 +119,29 @@
   display: block;
 }
 
+.hero-banner-image-button {
+  all: unset;
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  cursor: zoom-in;
+  box-sizing: border-box;
+}
+
+.hero-banner-image-button:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
+.hero-banner-image-button img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .hero-banner-info {
   background: #111;
   color: #fff;
@@ -729,6 +752,19 @@
   width: 100%;
 }
 
+.character-gallery-thumb-btn {
+  all: unset;
+  display: block;
+  flex-shrink: 0;
+  cursor: zoom-in;
+  box-sizing: border-box;
+}
+
+.character-gallery-thumb-btn:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
 .gallery-image {
   /* Adjust these values to your preferred size */
   width: 400px; 
@@ -740,7 +776,8 @@
   /* Optional: adds space between images and rounds corners */
   margin: 5px;
   border-radius: 5px;
-  cursor: pointer;
+  cursor: inherit;
+  display: block;
 }
 
 

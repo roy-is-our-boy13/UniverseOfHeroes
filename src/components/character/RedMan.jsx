@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import redman from '../../assets/imagesCharacters/RedMan.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/redman.json';
@@ -9,9 +9,7 @@ function RedMan() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={redman} alt="Red Man" />
-        </div>
+        <CharacterHeroImage characterId="redman" alt="Red Man" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">RED MAN</h1>

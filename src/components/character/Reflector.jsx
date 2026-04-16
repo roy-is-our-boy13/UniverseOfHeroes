@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import refectorPose from '../../assets/imagePose/RefectorPose.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/reflector.json';
@@ -9,9 +9,7 @@ function Reflector() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={refectorPose} alt="Reflector" />
-        </div>
+        <CharacterHeroImage characterId="reflector" alt="Reflector" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">REFLECTOR</h1>

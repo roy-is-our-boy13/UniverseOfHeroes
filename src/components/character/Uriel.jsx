@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import placeholder from '../../assets/imageIcon/Character.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/otherImages/CharactersTitle.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/uriel.json';
@@ -9,9 +9,7 @@ function Uriel() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={placeholder} alt="Uriel" />
-        </div>
+        <CharacterHeroImage characterId="uriel" alt="Uriel" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">URIEL</h1>

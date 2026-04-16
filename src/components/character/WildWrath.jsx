@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import wildwrath from '../../assets/imagePose/WildWrathPose.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/WildWrathWallpaper.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/wildwrath.json';
@@ -9,9 +9,7 @@ function WildWrath() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={wildwrath} alt="Wild Wrath" />
-        </div>
+        <CharacterHeroImage characterId="wildwrath" alt="Wild Wrath" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">WILD WRATH</h1>

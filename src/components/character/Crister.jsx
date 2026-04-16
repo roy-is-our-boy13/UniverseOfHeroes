@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import crister from '../../assets/imagePose/CristerPose.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/CristerBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/crister.json';
@@ -9,9 +9,7 @@ function Crister() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={crister} alt="Crister" />
-        </div>
+        <CharacterHeroImage characterId="crister" alt="Crister" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">CRISTER</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import humanstrike from '../../assets/imagePose/HumanStrikePose.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/humanstrike.json';
@@ -9,9 +9,7 @@ function HumanStrike() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={humanstrike} alt="Human Strike" />
-        </div>
+        <CharacterHeroImage characterId="humanstrike" alt="Human Strike" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">HUMAN STRIKE</h1>

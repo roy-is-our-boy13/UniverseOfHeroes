@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import roaringlion from '../../assets/imagesCharacters/RoaringLion.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/roaringlion.json';
@@ -9,9 +9,7 @@ function RoaringLion() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={roaringlion} alt="Roaring Lion" />
-        </div>
+        <CharacterHeroImage characterId="roaringlion" alt="Roaring Lion" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">ROARING LION</h1>

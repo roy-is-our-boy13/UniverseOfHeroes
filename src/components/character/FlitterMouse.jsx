@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import flittermouse from '../../assets/imagesCharacters/FlitterMouse.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/flittermouse.json';
@@ -9,9 +9,7 @@ function FlitterMouse() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={flittermouse} alt="Flitter Mouse" />
-        </div>
+        <CharacterHeroImage characterId="flittermouse" alt="Flitter Mouse" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">FLITTER MOUSE</h1>

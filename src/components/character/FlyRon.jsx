@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import flyron from '../../assets/imagePose/FlyRonPose.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/flyron.json';
@@ -13,9 +13,7 @@ function FlyRon()
       <div className="hero-character-page">
         {/* Hero header */}
         <section className="hero-banner">
-          <div className="hero-banner-image">
-            <img src={flyron} alt="Fly Ron" />
-          </div>
+          <CharacterHeroImage characterId="flyron" alt="Fly Ron" />
           <div className="hero-banner-info">
             <div className="hero-banner-eyebrow">ROY PERLMAN</div>
             <h1 className="hero-banner-name">FLY RON</h1>

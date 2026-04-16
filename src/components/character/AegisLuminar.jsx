@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import aegisluminar from '../../assets/imagesCharacters/Aegis Luminar.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/aegisluminar.json';
@@ -9,9 +9,7 @@ function AegisLuminar() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={aegisluminar} alt="Aegis Luminar" />
-        </div>
+        <CharacterHeroImage characterId="aegisluminar" alt="Aegis Luminar" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">AEGIS LUMINAR</h1>

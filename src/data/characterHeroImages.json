@@ -1,0 +1,27 @@
+{
+  "description": "Hero banner images per character route id. Use imagePose for files in assets/imagePose, portraitImage for assets/imagesCharacters, or placeholder for the generic icon.",
+  "heroImageByCharacterId": {
+    "flyron": { "imagePose": "FlyRonPose.png" },
+    "crister": { "imagePose": "CristerPose.png" },
+    "wildwrath": { "imagePose": "WildWrathPose.png" },
+    "humanstrike": { "imagePose": "HumanStrikePose.png" },
+    "reflector": { "imagePose": "RefectorPose.png" },
+    "morphoman": { "imagePose": "MorphoManPose.png" },
+    "apolloray": { "portraitImage": "ApolloRay.png" },
+    "flittermouse": { "portraitImage": "FlitterMouse.png" },
+    "roaringlion": { "portraitImage": "RoaringLion.png" },
+    "jungletitian": { "portraitImage": "JungleTitan.png" },
+    "howlwolf": { "portraitImage": "HowlWolf.png" },
+    "screamwave": { "portraitImage": "ScreamWave.png" },
+    "ravenvangaurd": { "portraitImage": "RavenVangaurd.png" },
+    "redman": { "portraitImage": "RedMan.png" },
+    "aegisluminar": { "portraitImage": "Aegis Luminar.png" },
+    "michael": { "placeholder": true },
+    "gabriel": { "placeholder": true },
+    "raphael": { "placeholder": true },
+    "uriel": { "placeholder": true },
+    "ariel": { "placeholder": true },
+    "azrael": { "placeholder": true },
+    "chamuel": { "placeholder": true }
+  }
+}

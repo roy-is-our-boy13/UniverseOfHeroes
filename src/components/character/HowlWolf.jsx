@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import howlwolf from '../../assets/imagesCharacters/HowlWolf.png';
+import CharacterHeroImage from './CharacterHeroImage.jsx';
 import wallpaper from '../../assets/Wallpaper/FlyRonBackground.png';
 import CharacterPhotoGallery from './CharacterPhotoGallery.jsx';
 import galleryData from '../../data/characterGalleries/howlwolf.json';
@@ -9,9 +9,7 @@ function HowlWolf() {
   return (
     <div className="hero-character-page">
       <section className="hero-banner">
-        <div className="hero-banner-image">
-          <img src={howlwolf} alt="Howl Wolf" />
-        </div>
+        <CharacterHeroImage characterId="howlwolf" alt="Howl Wolf" />
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">HOWL WOLF</h1>
