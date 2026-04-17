@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
+import comicsLogoTitle from '../assets/PageTitles/ComicsLogoTitle.png';
 import { seriesNameToSlug } from './Series/seriesSlugs.js';
 import cashCircuits from '../assets/Comics/Cash & Circuits_ Bank Heist Gone Rogue.pdf';
 import shadowBlade from '../assets/Comics/Shadow Blade_ Ninja Hunter.pdf';
@@ -87,7 +88,11 @@ function Comics() {
 
   return (
     <section className="comics-page">
-      <h2 className="comics-page-title">Universe Of Heroes Comics</h2>
+      <img
+        src={comicsLogoTitle}
+        alt="Universe Of Heroes Comics"
+        className="comics-page-title-image"
+      />
 
       <div className="comics-row">
         {comicFiles.map((comic, index) => (

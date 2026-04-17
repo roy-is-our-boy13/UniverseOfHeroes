@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
+import galleryTitleLogo from '../assets/PageTitles/GalleryTitleLogo.png';
 import mainGalleryData from '../data/mainGallery.json';
 
 const otherImageUrlByFile = Object.fromEntries(
@@ -55,7 +56,11 @@ function Gallery()
 
   return (
     <div className="column-gallery-wrapper">
-      <h2 className="column-gallery-title">Gallery</h2>
+      <img
+        src={galleryTitleLogo}
+        alt="Gallery"
+        className="column-gallery-title-image"
+      />
       <div className="gallery-grid">
         {visibleItems.map((item, index) => (
           <div key={start + index} className="gallery-grid-item">

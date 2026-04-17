@@ -879,12 +879,12 @@
   padding: 2rem 1rem;
 }
 
-.column-gallery-title {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
+.column-gallery-title-image {
+  display: block;
+  margin: 0 auto 2rem;
+  max-width: min(100%, 900px);
+  width: 90%;
+  height: auto;
 }
 
 .column-gallery {
@@ -1684,12 +1684,12 @@ button.merch-product-card-button {
   padding: 1.25rem 0 2rem;
 }
 
-.comics-page-title {
-  margin: 0 0 1rem;
-  font-size: 1.45rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.comics-page-title-image {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: min(100%, 900px);
+  width: 100%;
+  height: auto;
 }
 
 .comics-row {
