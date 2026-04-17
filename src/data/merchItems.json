@@ -42,6 +42,12 @@
     "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1776454426/IMG_0351_wqwgfu.jpg"
   },
   {
+    "name": "Morpho Man Action Figure",
+    "price": "$29.99",
+    "tag": "Figure",
+    "imageUrl": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1776456699/MorphoManToy2_sq66ab.png"
+  },
+  {
     "name": "Artisan Spice Collection",
     "price": "$34.99",
     "tag": "Gourmet",

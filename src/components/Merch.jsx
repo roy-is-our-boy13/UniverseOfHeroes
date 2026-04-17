@@ -22,6 +22,9 @@ function Merch() {
   }, [selectedItem]);
 
   const visibleItems = useMemo(() => {
+    if (activeMenu === 'Men') {
+      return merchItems.filter((item) => item.tag === 'Shirt');
+    }
     if (activeMenu === 'Toys') {
       return merchItems.filter((item) => item.tag === 'Figure');
     }

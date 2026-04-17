@@ -15,13 +15,13 @@
     { "name": "Raven Vanguard", "path": "/ravenvangaurd", "imageFile": "RavenVangaurd.png" },
     { "name": "Red Man", "path": "/redman", "imageFile": "RedMan.png" },
     { "name": "Aegis Luminar", "path": "/aegisluminar", "imageFile": "Aegis Luminar.png" },
-    { "name": "Michael", "path": "/michael" },
+    { "name": "Michael", "path": "/michael", "imageFile": "StMicheal.png" },
     { "name": "Gabriel", "path": "/gabriel" },
     { "name": "Raphael", "path": "/raphael" },
     { "name": "Uriel", "path": "/uriel" },
     { "name": "Ariel", "path": "/ariel" },
     { "name": "Azrael", "path": "/azrael" },
     { "name": "Chamuel", "path": "/chamuel" },
-    { "name": "The Messenger", "path": "/themessenger" }
+    { "name": "The Messenger", "path": "/themessenger", "imageFile": "TheMessenger.png" }
   ]
 }

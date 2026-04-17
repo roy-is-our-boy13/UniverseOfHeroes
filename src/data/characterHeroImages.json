@@ -16,13 +16,13 @@
     "ravenvangaurd": { "portraitImage": "RavenVangaurd.png" },
     "redman": { "portraitImage": "RedMan.png" },
     "aegisluminar": { "portraitImage": "Aegis Luminar.png" },
-    "michael": { "placeholder": true },
+    "michael": { "portraitImage": "StMicheal.png" },
     "gabriel": { "placeholder": true },
     "raphael": { "placeholder": true },
     "uriel": { "placeholder": true },
     "ariel": { "placeholder": true },
     "azrael": { "placeholder": true },
     "chamuel": { "placeholder": true },
-    "themessenger": { "placeholder": true }
+    "themessenger": { "portraitImage": "TheMessenger.png" }
   }
 }
