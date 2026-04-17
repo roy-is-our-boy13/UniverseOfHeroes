@@ -11,6 +11,10 @@
     { "src": "../assets/otherImages/FlyRonComicPage.png", "alt": "Fly Ron comic page" },
     { "src": "../assets/otherImages/ApolloRayPoster.png", "alt": "Apollo Ray poster" },
     { "src": "../assets/otherImages/MessangerPic2.png", "alt": "Messenger illustration" },
-    { "src": "../assets/otherImages/FlyRonPoseter.png", "alt": "Fly Ron poster" }
+    { "src": "../assets/otherImages/FlyRonPoseter.png", "alt": "Fly Ron poster" },
+    {
+      "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1776454668/IMG_0215_m3jl6y.png",
+      "alt": "Jesus of Nazareth #1 comic cover — The Guardian of Old Jerusalem"
+    }
   ]
 }

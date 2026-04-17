@@ -39,6 +39,7 @@ import Uriel from './components/character/Uriel.jsx';
 import Ariel from './components/character/Ariel.jsx';
 import Azrael from './components/character/Azrael.jsx';
 import Chamuel from './components/character/Chamuel.jsx';
+import TheMessenger from './components/character/TheMessenger.jsx';
 
 //Icons
 import home from './assets/imageIcon/Home.png';
@@ -205,6 +206,7 @@ function App()
         <Route path ="/ariel" element={<Ariel />} />
         <Route path ="/azrael" element={<Azrael />} />
         <Route path ="/chamuel" element={<Chamuel />} />
+        <Route path ="/themessenger" element={<TheMessenger />} />
       </Routes>
         <div>
 

@@ -21,7 +21,14 @@ const SERIES_ALL = [
   'Jungle Titan',
   'Aegis Luminar',
   'Wild Reign',
+  'The Messenger',
 ];
+
+/** Series that open a character page instead of a comic series detail route. */
+function seriesListLinkPath(name) {
+  if (name === 'The Messenger') return '/themessenger';
+  return `/comics/series/${seriesNameToSlug(name)}`;
+}
 
 function chunkIntoColumns(items, columnCount = 3) {
   const n = items.length;
@@ -159,7 +166,7 @@ function Comics() {
               <ul key={colIndex} className="comics-series-column">
                 {column.map((name) => (
                   <li key={name}>
-                    <Link to={`/comics/series/${seriesNameToSlug(name)}`} className="comics-series-link">
+                    <Link to={seriesListLinkPath(name)} className="comics-series-link">
                       {name}
                     </Link>
                   </li>

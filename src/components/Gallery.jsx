@@ -13,6 +13,9 @@ const otherImageUrlByFile = Object.fromEntries(
 );
 
 const galleryItems = mainGalleryData.gallery.map((item) => {
+  if (item.src.startsWith('http://') || item.src.startsWith('https://')) {
+    return { img: item.src, alt: item.alt };
+  }
   const file = item.src.replace(/^.*\//, '');
   const img = otherImageUrlByFile[file];
   if (img == null) {

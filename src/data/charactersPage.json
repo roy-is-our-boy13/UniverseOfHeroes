@@ -21,6 +21,7 @@
     { "name": "Uriel", "path": "/uriel" },
     { "name": "Ariel", "path": "/ariel" },
     { "name": "Azrael", "path": "/azrael" },
-    { "name": "Chamuel", "path": "/chamuel" }
+    { "name": "Chamuel", "path": "/chamuel" },
+    { "name": "The Messenger", "path": "/themessenger" }
   ]
 }
