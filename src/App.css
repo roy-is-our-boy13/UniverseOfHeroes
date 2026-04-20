@@ -1142,6 +1142,43 @@
   padding: 0.65rem 2rem;
 }
 
+.merch-top-nav-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem 1.25rem;
+}
+
+.merch-top-nav-categories {
+  flex: 0 1 auto;
+}
+
+.merch-top-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0.35rem;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #111;
+  cursor: pointer;
+}
+
+.merch-top-cart-btn:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.merch-top-cart-icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
 .merch-top-menu-list {
   display: flex;
   flex-wrap: wrap;
@@ -1551,10 +1588,10 @@ button.merch-product-card-button {
   background: linear-gradient(135deg, #f0f0f0 0%, #e2e2e2 100%);
 }
 
+.merch-pdp-carousel-prev,
 .merch-pdp-carousel-next {
   position: absolute;
   top: 50%;
-  right: 0.35rem;
   transform: translateY(-50%);
   width: 2rem;
   height: 3rem;
@@ -1564,8 +1601,23 @@ button.merch-product-card-button {
   font-size: 1.5rem;
   line-height: 1;
   color: #333;
-  cursor: default;
+  cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.merch-pdp-carousel-prev:hover,
+.merch-pdp-carousel-next:hover {
+  background: #fff;
+  color: #111;
+}
+
+.merch-pdp-carousel-prev {
+  left: 0.35rem;
+}
+
+.merch-pdp-carousel-next {
+  right: 0.35rem;
 }
 
 .merch-pdp-title-column {
@@ -1667,6 +1719,10 @@ button.merch-product-card-button {
 
   .merch-top-menu-list {
     gap: 0.35rem 1rem;
+    justify-content: flex-start;
+  }
+
+  .merch-top-nav-row {
     justify-content: flex-start;
   }
 

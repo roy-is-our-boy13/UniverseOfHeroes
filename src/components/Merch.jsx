@@ -2,15 +2,48 @@ import React, { useEffect, useMemo, useState } from 'react';
 import '../App.css';
 import merchItems from '../data/merchItems.json';
 
+/** Shown as an extra gallery slide when `morePhotos` is true on an item (see `getPdpImages`). */
+const MORE_PHOTOS_IMAGE_URL =
+  'https://res.cloudinary.com/dlwqeqsev/image/upload/v1774381255/samples/food/spices.jpg';
+
+function getPdpImages(item) {
+  if (item?.imageUrls?.length) {
+    return item.imageUrls.filter(Boolean);
+  }
+  const primary = item?.imageUrl;
+  const urls = primary ? [primary] : [];
+  if (item?.morePhotos) {
+    if (MORE_PHOTOS_IMAGE_URL !== primary) {
+      urls.push(MORE_PHOTOS_IMAGE_URL);
+    }
+  }
+  return urls;
+}
+
 function Merch() {
   const menuItems = ['Men', 'Women', 'Kids', 'Toys', 'Games', 'Accessories'];
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [pdpImageIndex, setPdpImageIndex] = useState(0);
+
+  useEffect(() => {
+    setPdpImageIndex(0);
+  }, [selectedItem]);
 
   useEffect(() => {
     if (!selectedItem) return;
+    const images = getPdpImages(selectedItem);
     const onKey = (e) => {
       if (e.key === 'Escape') setSelectedItem(null);
+      if (images.length <= 1) return;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        setPdpImageIndex((i) => (i + 1) % images.length);
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        setPdpImageIndex((i) => (i - 1 + images.length) % images.length);
+      }
     };
     document.addEventListener('keydown', onKey);
     const prevOverflow = document.body.style.overflow;
@@ -31,25 +64,44 @@ function Merch() {
     return merchItems;
   }, [activeMenu]);
 
+  const pdpImages = useMemo(
+    () => (selectedItem ? getPdpImages(selectedItem) : []),
+    [selectedItem],
+  );
+  const pdpImageSrc = pdpImages[pdpImageIndex] ?? pdpImages[0];
+  const pdpHasMultipleImages = pdpImages.length > 1;
+
   return (
     <section className="merch-page">
       <header className="merch-top-nav">
-        <nav aria-label="Merch categories" className="merch-top-nav-inner">
-          <ul className="merch-top-menu-list">
-            {menuItems.map((item) => (
-              <li key={item} className="merch-top-menu-item">
-                <button
-                  type="button"
-                  className={`merch-top-menu-link${activeMenu === item ? ' merch-top-menu-link--active' : ''}`}
-                  onClick={() => setActiveMenu(item)}
-                  aria-current={activeMenu === item ? 'true' : undefined}
-                >
-                  {item}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="merch-top-nav-inner">
+          <div className="merch-top-nav-row">
+            <nav aria-label="Merch categories" className="merch-top-nav-categories">
+              <ul className="merch-top-menu-list">
+                {menuItems.map((item) => (
+                  <li key={item} className="merch-top-menu-item">
+                    <button
+                      type="button"
+                      className={`merch-top-menu-link${activeMenu === item ? ' merch-top-menu-link--active' : ''}`}
+                      onClick={() => setActiveMenu(item)}
+                      aria-current={activeMenu === item ? 'true' : undefined}
+                    >
+                      {item}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <button type="button" className="merch-top-cart-btn" aria-label="Shopping cart">
+              <svg className="merch-top-cart-icon" viewBox="0 0 24 24" aria-hidden>
+                <path
+                  fill="currentColor"
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-12.83-2h12.35c.75 0 1.41-.42 1.73-1.06l3.57-7.01a1 1 0 0 0-.05-.96L20.48 2H4.21l-.94-2H1v2h2l3.6 7.59-1.35 2.45C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2zM6.13 4h12l1.64 3H7.4L6.13 4z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </header>
 
       <div className="merch-main">
@@ -143,18 +195,39 @@ function Merch() {
                       </svg>
                     </button>
                   </div>
-                  {selectedItem.imageUrl ? (
+                  {pdpImageSrc ? (
                     <img
-                      src={selectedItem.imageUrl}
+                      src={pdpImageSrc}
                       alt=""
                       className="merch-pdp-image"
                     />
                   ) : (
                     <div className="merch-pdp-image-placeholder" aria-hidden />
                   )}
-                  <button type="button" className="merch-pdp-carousel-next" tabIndex={-1} aria-hidden="true">
-                    ›
-                  </button>
+                  {pdpHasMultipleImages && (
+                    <>
+                      <button
+                        type="button"
+                        className="merch-pdp-carousel-prev"
+                        onClick={() =>
+                          setPdpImageIndex((i) => (i - 1 + pdpImages.length) % pdpImages.length)
+                        }
+                        aria-label="Previous image"
+                      >
+                        ‹
+                      </button>
+                      <button
+                        type="button"
+                        className="merch-pdp-carousel-next"
+                        onClick={() =>
+                          setPdpImageIndex((i) => (i + 1) % pdpImages.length)
+                        }
+                        aria-label="Next image"
+                      >
+                        ›
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
 
