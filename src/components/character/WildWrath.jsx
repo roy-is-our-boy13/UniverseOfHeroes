@@ -11,9 +11,8 @@ function WildWrath() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="wildwrath" alt="Wild Wrath" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">THEODORE IRIS</div>
           <h1 className="hero-banner-name">WILD WRATH</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -43,15 +42,15 @@ function WildWrath() {
             </div>
             <div className="hero-stat">
               <dt>Aliases</dt>
-              <dd>Wild Wrath</dd>
+              <dd>The Hawk</dd>
             </div>
             <div className="hero-stat">
               <dt>Affiliation</dt>
-              <dd>Unknown</dd>
+              <dd>Terra Warriors</dd>
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Greece</dd>
             </div>
           </dl>
         </aside>

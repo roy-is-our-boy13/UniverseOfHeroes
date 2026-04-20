@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import '../App.css';
+import '../styles/Merch.css';
 import merchItems from '../data/merchItems.json';
 
 /** Shown as an extra gallery slide when `morePhotos` is true on an item (see `getPdpImages`). */
@@ -20,21 +20,83 @@ function getPdpImages(item) {
   return urls;
 }
 
+const CART_STORAGE_KEY = 'uoh-merch-cart';
+
+function readCartFromStorage() {
+  const validNames = new Set(merchItems.map((p) => p.name));
+  try {
+    const raw = localStorage.getItem(CART_STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(
+      (l) =>
+        l &&
+        typeof l.name === 'string' &&
+        validNames.has(l.name) &&
+        typeof l.quantity === 'number' &&
+        l.quantity > 0,
+    );
+  } catch {
+    return [];
+  }
+}
+
 function Merch() {
   const menuItems = ['Men', 'Women', 'Kids', 'Toys', 'Games', 'Accessories'];
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [pdpImageIndex, setPdpImageIndex] = useState(0);
+  const [cartLines, setCartLines] = useState(readCartFromStorage);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [imageZoomOpen, setImageZoomOpen] = useState(false);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartLines));
+    } catch {
+      /* ignore quota / private mode */
+    }
+  }, [cartLines]);
 
   useEffect(() => {
     setPdpImageIndex(0);
   }, [selectedItem]);
 
   useEffect(() => {
+    if (!selectedItem) setImageZoomOpen(false);
+  }, [selectedItem]);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== 'Escape') return;
+      if (imageZoomOpen) {
+        setImageZoomOpen(false);
+        return;
+      }
+      if (cartOpen) {
+        setCartOpen(false);
+        return;
+      }
+      if (selectedItem) setSelectedItem(null);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [imageZoomOpen, cartOpen, selectedItem]);
+
+  useEffect(() => {
+    if (!selectedItem && !cartOpen && !imageZoomOpen) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [selectedItem, cartOpen, imageZoomOpen]);
+
+  useEffect(() => {
     if (!selectedItem) return;
     const images = getPdpImages(selectedItem);
     const onKey = (e) => {
-      if (e.key === 'Escape') setSelectedItem(null);
       if (images.length <= 1) return;
       if (e.key === 'ArrowRight') {
         e.preventDefault();
@@ -46,12 +108,7 @@ function Merch() {
       }
     };
     document.addEventListener('keydown', onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = prevOverflow;
-    };
+    return () => document.removeEventListener('keydown', onKey);
   }, [selectedItem]);
 
   const visibleItems = useMemo(() => {
@@ -70,6 +127,51 @@ function Merch() {
   );
   const pdpImageSrc = pdpImages[pdpImageIndex] ?? pdpImages[0];
   const pdpHasMultipleImages = pdpImages.length > 1;
+
+  const productByName = useMemo(() => {
+    const m = new Map();
+    merchItems.forEach((p) => m.set(p.name, p));
+    return m;
+  }, []);
+
+  const resolvedCartLines = useMemo(
+    () =>
+      cartLines
+        .map((line) => {
+          const product = productByName.get(line.name);
+          return product ? { ...line, product } : null;
+        })
+        .filter(Boolean),
+    [cartLines, productByName],
+  );
+
+  const cartItemCount = useMemo(
+    () => cartLines.reduce((sum, line) => sum + line.quantity, 0),
+    [cartLines],
+  );
+
+  const addProductToCart = (product) => {
+    setCartLines((prev) => {
+      const i = prev.findIndex((l) => l.name === product.name);
+      if (i >= 0) {
+        const next = [...prev];
+        next[i] = { ...next[i], quantity: next[i].quantity + 1 };
+        return next;
+      }
+      return [...prev, { name: product.name, quantity: 1 }];
+    });
+  };
+
+  const setLineQuantity = (productName, quantity) => {
+    setCartLines((prev) => {
+      if (quantity <= 0) return prev.filter((l) => l.name !== productName);
+      return prev.map((l) => (l.name === productName ? { ...l, quantity } : l));
+    });
+  };
+
+  const removeLine = (productName) => {
+    setCartLines((prev) => prev.filter((l) => l.name !== productName));
+  };
 
   return (
     <section className="merch-page">
@@ -92,13 +194,28 @@ function Merch() {
                 ))}
               </ul>
             </nav>
-            <button type="button" className="merch-top-cart-btn" aria-label="Shopping cart">
+            <button
+              type="button"
+              className="merch-top-cart-btn"
+              onClick={() => setCartOpen((o) => !o)}
+              aria-expanded={cartOpen}
+              aria-haspopup="dialog"
+              aria-controls="merch-cart-panel"
+              aria-label={
+                cartItemCount
+                  ? `Shopping cart, ${cartItemCount} item${cartItemCount === 1 ? '' : 's'}`
+                  : 'Shopping cart'
+              }
+            >
               <svg className="merch-top-cart-icon" viewBox="0 0 24 24" aria-hidden>
                 <path
                   fill="currentColor"
                   d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-12.83-2h12.35c.75 0 1.41-.42 1.73-1.06l3.57-7.01a1 1 0 0 0-.05-.96L20.48 2H4.21l-.94-2H1v2h2l3.6 7.59-1.35 2.45C4.52 15.37 5.48 17 7 17h12v-2H7l1.1-2zM6.13 4h12l1.64 3H7.4L6.13 4z"
                 />
               </svg>
+              {cartItemCount > 0 && (
+                <span className="merch-cart-badge">{cartItemCount > 99 ? '99+' : cartItemCount}</span>
+              )}
             </button>
           </div>
         </div>
@@ -186,7 +303,16 @@ function Merch() {
                         />
                       </svg>
                     </button>
-                    <button type="button" className="merch-pdp-icon-btn" aria-label="Zoom image">
+                    <button
+                      type="button"
+                      className="merch-pdp-icon-btn"
+                      aria-label="View image full screen"
+                      disabled={!pdpImageSrc}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (pdpImageSrc) setImageZoomOpen(true);
+                      }}
+                    >
                       <svg className="merch-pdp-icon-svg" viewBox="0 0 24 24" aria-hidden>
                         <path
                           fill="currentColor"
@@ -245,12 +371,153 @@ function Merch() {
                     <span className="merch-pdp-sidebar-price-old">{selectedItem.oldPrice}</span>
                   )}
                 </p>
-                <button type="button" className="merch-pdp-add-cart">
+                <button
+                  type="button"
+                  className="merch-pdp-add-cart"
+                  onClick={() => addProductToCart(selectedItem)}
+                >
                   Add to cart
                 </button>
               </aside>
             </div>
           </div>
+        </div>
+      )}
+
+      {selectedItem && imageZoomOpen && pdpImageSrc && (
+        <div
+          className="merch-image-zoom-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Full screen product image"
+          onClick={() => setImageZoomOpen(false)}
+        >
+          <button
+            type="button"
+            className="merch-image-zoom-close"
+            onClick={(e) => {
+              e.stopPropagation();
+              setImageZoomOpen(false);
+            }}
+            aria-label="Close full screen image"
+          >
+            ×
+          </button>
+          {pdpHasMultipleImages && (
+            <>
+              <button
+                type="button"
+                className="merch-image-zoom-carousel-prev"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setPdpImageIndex((i) => (i - 1 + pdpImages.length) % pdpImages.length);
+                }}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                className="merch-image-zoom-carousel-next"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setPdpImageIndex((i) => (i + 1) % pdpImages.length);
+                }}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+            </>
+          )}
+          <img
+            src={pdpImageSrc}
+            alt=""
+            className="merch-image-zoom-img"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+
+      {cartOpen && (
+        <div
+          className="merch-cart-overlay"
+          role="presentation"
+          onClick={() => setCartOpen(false)}
+        >
+          <aside
+            id="merch-cart-panel"
+            className="merch-cart-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="merch-cart-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="merch-cart-panel-header">
+              <h2 id="merch-cart-title" className="merch-cart-panel-title">
+                Your cart
+              </h2>
+              <button
+                type="button"
+                className="merch-cart-panel-close"
+                onClick={() => setCartOpen(false)}
+                aria-label="Close cart"
+              >
+                ×
+              </button>
+            </div>
+            {resolvedCartLines.length === 0 ? (
+              <p className="merch-cart-empty">Your cart is empty.</p>
+            ) : (
+              <ul className="merch-cart-lines">
+                {resolvedCartLines.map(({ name, quantity, product }) => (
+                  <li key={name} className="merch-cart-line">
+                    <div className="merch-cart-line-image">
+                      {product.imageUrl ? (
+                        <img src={product.imageUrl} alt="" className="merch-cart-line-img" />
+                      ) : (
+                        <div className="merch-cart-line-img-placeholder" aria-hidden />
+                      )}
+                    </div>
+                    <div className="merch-cart-line-body">
+                      <div className="merch-cart-line-title-row">
+                        <span className="merch-cart-line-name">{product.name}</span>
+                        <button
+                          type="button"
+                          className="merch-cart-line-remove"
+                          onClick={() => removeLine(name)}
+                          aria-label={`Remove ${product.name} from cart`}
+                        >
+                          Remove
+                        </button>
+                      </div>
+                      <p className="merch-cart-line-price">{product.price}</p>
+                      <div className="merch-cart-line-qty">
+                        <button
+                          type="button"
+                          className="merch-cart-qty-btn"
+                          onClick={() => setLineQuantity(name, quantity - 1)}
+                          aria-label="Decrease quantity"
+                        >
+                          −
+                        </button>
+                        <span className="merch-cart-qty-value" aria-live="polite">
+                          {quantity}
+                        </span>
+                        <button
+                          type="button"
+                          className="merch-cart-qty-btn"
+                          onClick={() => setLineQuantity(name, quantity + 1)}
+                          aria-label="Increase quantity"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </aside>
         </div>
       )}
     </section>

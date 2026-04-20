@@ -11,9 +11,8 @@ function Crister() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="crister" alt="Crister" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Joshua Majors</div>
           <h1 className="hero-banner-name">CRISTER</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -47,11 +46,11 @@ function Crister() {
             </div>
             <div className="hero-stat">
               <dt>Affiliation</dt>
-              <dd>Unknown</dd>
+              <dd>Terra Warriors</dd>
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Brooklyn, New York</dd>
             </div>
           </dl>
         </aside>

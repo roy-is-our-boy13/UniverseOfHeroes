@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import '../App.css'
+import '../styles/Home.css';
+import '../styles/Gallery.css';
 import flyRon1 from '../assets/otherImages/FlyRon1.png';
 import morphoMan1 from '../assets/otherImages/MorphoMan1.png';
 import humanStrike1 from '../assets/otherImages/HumanStrike1.png';

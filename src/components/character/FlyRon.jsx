@@ -15,9 +15,8 @@ function FlyRon()
         <section className="hero-banner">
           <CharacterHeroImage characterId="flyron" alt="Fly Ron" />
           <div className="hero-banner-info">
-            <div className="hero-banner-eyebrow">ROY PERLMAN</div>
+            <div className="hero-banner-eyebrow">Kyle Skyler</div>
             <h1 className="hero-banner-name">FLY RON</h1>
-            <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
           </div>
         </section>
 
@@ -48,15 +47,15 @@ function FlyRon()
               </div>
               <div className="hero-stat">
                 <dt>Aliases</dt>
-                <dd>Fly Ron</dd>
+                <dd>The Fly</dd>
               </div>
               <div className="hero-stat">
                 <dt>Affiliation</dt>
-                <dd>Lin Kuei</dd>
+                <dd>Terra Warriors</dd>
               </div>
               <div className="hero-stat">
                 <dt>Place of Origin</dt>
-                <dd>Earthrealm</dd>
+                <dd>Skyline Islands</dd>
               </div>
             </dl>
           </aside>

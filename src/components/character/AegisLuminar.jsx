@@ -11,9 +11,7 @@ function AegisLuminar() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="aegisluminar" alt="Aegis Luminar" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">AEGIS LUMINAR</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 

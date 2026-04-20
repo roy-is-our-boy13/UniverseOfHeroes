@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import '../../App.css';
+import '../../styles/SeriesDetail.css';
 import { getSeriesBySlug } from './seriesData.js';
 
 function isPdfHref(href) {

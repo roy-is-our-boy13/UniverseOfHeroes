@@ -1,0 +1,54 @@
+/* About page — minimal centered layout, light purple field, ~full viewport */
+.about-page {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+  min-height: calc(100vh - 6.5rem);
+  min-height: calc(100svh - 6.5rem);
+  background: #e4daf5;
+  padding: clamp(1.5rem, 4vh, 2.75rem) clamp(1.25rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page-inner {
+  max-width: 38rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .about-page {
+    min-height: calc(100vh - 8.5rem);
+    min-height: calc(100svh - 8.5rem);
+  }
+}
+
+.about-page-heading {
+  margin: 0 0 clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #141414;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.about-page-copy {
+  text-align: left;
+  color: #1a1a1a;
+  font-size: clamp(0.98rem, 2.2vw, 1.0625rem);
+  line-height: 1.78;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.about-page-copy p {
+  margin: 0 0 1.35rem;
+}
+
+.about-page-copy p:last-child {
+  margin-bottom: 0;
+}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../App.css';
+import '../styles/Gallery.css';
 import galleryTitleLogo from '../assets/PageTitles/GalleryTitleLogo.png';
 import mainGalleryData from '../data/mainGallery.json';
 

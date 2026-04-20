@@ -1,6 +1,6 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import '../App.css'
+import '../styles/Characters.css'
 import charactersPage from '../data/charactersPage.json';
 import charactersTitle from '../assets/otherImages/CharactersTitle.png';
 import characterPlaceholder from '../assets/imageIcon/Character.png';

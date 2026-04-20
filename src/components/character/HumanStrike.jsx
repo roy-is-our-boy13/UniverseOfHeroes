@@ -11,9 +11,8 @@ function HumanStrike() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="humanstrike" alt="Human Strike" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Isamu Tsao</div>
           <h1 className="hero-banner-name">HUMAN STRIKE</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -43,15 +42,15 @@ function HumanStrike() {
             </div>
             <div className="hero-stat">
               <dt>Aliases</dt>
-              <dd>Human Strike</dd>
+              <dd>The Samurai</dd>
             </div>
             <div className="hero-stat">
               <dt>Affiliation</dt>
-              <dd>Unknown</dd>
+              <dd>Terra Warriors</dd>
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Tokyo, Japan</dd>
             </div>
           </dl>
         </aside>

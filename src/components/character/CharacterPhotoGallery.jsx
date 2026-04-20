@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import '../../App.css';
+import '../../styles/Home.css';
+import '../../styles/Gallery.css';
 
 /**
  * Horizontal image gallery driven by JSON: { gallery: [{ src, alt }, ...] }

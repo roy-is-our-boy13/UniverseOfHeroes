@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../App.css';
+import '../styles/Comics.css';
 import comicsLogoTitle from '../assets/PageTitles/ComicsLogoTitle.png';
 import { seriesNameToSlug } from './Series/seriesSlugs.js';
 import cashCircuits from '../assets/Comics/Cash & Circuits_ Bank Heist Gone Rogue.pdf';

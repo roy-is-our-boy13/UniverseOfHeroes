@@ -11,9 +11,8 @@ function FlitterMouse() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="flittermouse" alt="Flitter Mouse" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Warren Miller</div>
           <h1 className="hero-banner-name">FLITTER MOUSE</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -43,7 +42,7 @@ function FlitterMouse() {
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Hells Kitchen, New York</dd>
             </div>
           </dl>
         </aside>

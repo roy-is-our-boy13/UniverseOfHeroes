@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getCharacterHeroImageUrl } from '../../utils/characterHeroImage.js';
+import '../../styles/Gallery.css';
 
 /**
  * Hero banner portrait with click-to-expand lightbox (full-size view).

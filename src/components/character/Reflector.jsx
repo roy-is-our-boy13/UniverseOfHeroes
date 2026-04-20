@@ -13,7 +13,6 @@ function Reflector() {
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">REFLECTOR</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -39,11 +38,11 @@ function Reflector() {
             </div>
             <div className="hero-stat">
               <dt>Affiliation</dt>
-              <dd>Unknown</dd>
+              <dd>Terra Warriors</dd>
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Queens, New York</dd>
             </div>
           </dl>
         </aside>

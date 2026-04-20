@@ -11,9 +11,8 @@ function ApolloRay() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="apolloray" alt="Apollo Ray" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">TITAN</div>
           <h1 className="hero-banner-name">APOLLO RAY</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -39,11 +38,11 @@ function ApolloRay() {
             </div>
             <div className="hero-stat">
               <dt>Affiliation</dt>
-              <dd>Unknown</dd>
+              <dd>Terra Warriors</dd>
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Chicago, Illinois</dd>
             </div>
           </dl>
         </aside>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import '../App.css';
+import '../styles/Gallery.css';
+import '../styles/Stages.css';
 import flyRonBackground from '../assets/Wallpaper/FlyRonBackground.png';
 import wildWrathWallpaper from '../assets/Wallpaper/WildWrathWallpaper.png';
 import morphoManBackground from '../assets/Wallpaper/MorphoManBackground.png';

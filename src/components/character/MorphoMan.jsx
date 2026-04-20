@@ -11,9 +11,8 @@ function MorphoMan() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="morphoman" alt="Morpho Man" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Benjamin Phillips</div>
           <h1 className="hero-banner-name">MORPHO MAN</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 

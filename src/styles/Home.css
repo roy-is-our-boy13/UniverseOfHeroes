@@ -1,0 +1,338 @@
+/* Home — What’s New carousel */
+.home-page {
+  text-align: left;
+}
+
+.whats-new {
+  margin: 0 0 2.5rem;
+  max-width: 100%;
+}
+
+.whats-new-banner {
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+  padding: 1.75rem 1.25rem 1.25rem;
+  isolation: isolate;
+}
+
+.whats-new-chevron {
+  position: absolute;
+  top: -15%;
+  width: 5px;
+  height: 130%;
+  background: linear-gradient(
+    180deg,
+    rgba(176, 160, 220, 0.35) 0%,
+    rgba(176, 160, 220, 0.85) 50%,
+    rgba(176, 160, 220, 0.35) 100%
+  );
+  transform: rotate(28deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.whats-new-chevron--a {
+  left: 6%;
+}
+
+.whats-new-chevron--b {
+  left: 9%;
+}
+
+.whats-new-banner-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(120px, 34%);
+  gap: 0.5rem 1.25rem;
+  align-items: end;
+}
+
+.whats-new-left {
+  min-width: 0;
+}
+
+.whats-new-covers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 520px;
+}
+
+.whats-new-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  border-radius: 1px;
+}
+
+.whats-new-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.75rem 1rem;
+  margin-top: 1.35rem;
+}
+
+.whats-new-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4.5vw, 2.85rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.whats-new-date-bar {
+  flex: 1;
+  min-width: 180px;
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: #111;
+  padding: 0.5rem 1.25rem;
+  box-sizing: border-box;
+}
+
+.whats-new-date-text {
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.whats-new-hero-wrap {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-height: 200px;
+}
+
+.whats-new-hero {
+  width: 100%;
+  max-height: min(320px, 38vw);
+  height: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.12));
+}
+
+.whats-new-controls {
+  display: flex;
+  align-items: stretch;
+  margin-top: 0;
+}
+
+.whats-new-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 52px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 11px;
+  background: #111;
+  cursor: pointer;
+  align-self: center;
+  transition: background 0.15s, transform 0.12s;
+}
+
+.whats-new-arrow:hover {
+  background: #000;
+}
+
+.whats-new-arrow:active {
+  transform: scale(0.97);
+}
+
+.whats-new-arrow-icon {
+  display: block;
+  width: 0;
+  height: 0;
+  flex-shrink: 0;
+}
+
+.whats-new-arrow-icon--left {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 12px solid #fff;
+  margin-left: -3px;
+}
+
+.whats-new-arrow-icon--right {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #fff;
+  margin-right: -3px;
+}
+
+.whats-new-arrow:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+.whats-new-tagline {
+  flex: 1;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+.whats-new-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.whats-new-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.whats-new-dot:hover {
+  background: #999;
+}
+
+.whats-new-dot.is-active {
+  background: #444;
+  transform: scale(1.1);
+}
+
+.whats-new-dot:focus-visible {
+  outline: 2px solid #646cff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .whats-new-banner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whats-new-hero-wrap {
+    justify-content: center;
+    min-height: 160px;
+    order: -1;
+  }
+
+  .whats-new-hero {
+    max-height: 220px;
+  }
+
+  .whats-new-covers {
+    max-width: none;
+  }
+
+  .whats-new-heading-row {
+    flex-direction: column;
+  }
+
+  .whats-new-date-bar {
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .whats-new-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .whats-new-arrow {
+    order: 1;
+  }
+
+  .whats-new-tagline {
+    order: 0;
+    flex: 1 1 100%;
+  }
+}
+.gallery-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gallery-wrapper {
+  display: flex;
+  overflow-x: hidden;
+  gap: 20px;
+  padding: 20px;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.character-gallery-thumb-btn {
+  all: unset;
+  display: block;
+  flex-shrink: 0;
+  cursor: zoom-in;
+  box-sizing: border-box;
+}
+
+.character-gallery-thumb-btn:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 4px;
+}
+
+.gallery-image {
+  /* Adjust these values to your preferred size */
+  width: 400px; 
+  height: 350px;
+  
+  /* This prevents the image from stretching */
+  object-fit: cover; 
+  
+  /* Optional: adds space between images and rounds corners */
+  margin: 5px;
+  border-radius: 5px;
+  cursor: inherit;
+  display: block;
+}
+
+
+.gallery-video {
+  min-width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.arrow {
+  background: black;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}

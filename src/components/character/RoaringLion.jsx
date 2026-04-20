@@ -13,7 +13,6 @@ function RoaringLion() {
         <div className="hero-banner-info">
           <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">ROARING LION</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -39,7 +38,7 @@ function RoaringLion() {
             </div>
             <div className="hero-stat">
               <dt>Affiliation</dt>
-              <dd>Unknown</dd>
+              <dd>Wild Reign</dd>
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
