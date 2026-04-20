@@ -11,7 +11,7 @@ function RavenVangaurd() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="ravenvangaurd" alt="Raven Vanguard" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">TITAN</div>
           <h1 className="hero-banner-name">RAVEN VANGUARD</h1>
         </div>
       </section>

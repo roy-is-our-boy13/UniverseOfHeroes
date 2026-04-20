@@ -11,7 +11,7 @@ function Reflector() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="reflector" alt="Reflector" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">TITAN </div>
           <h1 className="hero-banner-name">REFLECTOR</h1>
         </div>
       </section>
