@@ -71,23 +71,23 @@ function NavigationMenu()
   ];
 
   const navItems = [
-    { name: 'Home', path: '/', image: home, color: '#81cad9' },
-    { name: 'About', path: '/about', image: about, color: '#ff0000' },
-    { name: 'Characters', path: '/characters', image: character, color: '#00ff00' },
-    { name: 'Comics', path: '/comics', image: comic, color: '#a765d3', dropdownItems: comicSeriesTitles },
-    { name: 'Stages', path: '/stages', image: stage, color: '#ffaa00' },
-    { name: 'Gallery', path: '/gallery', image: gallery, color: '#ffaa00' },
-    { name: 'Merch', path: '/merch', image: merch, color: '#ff4d6d' },
+    { name: 'Home', path: '/', image: home },
+    { name: 'About', path: '/about', image: about },
+    { name: 'Characters', path: '/characters', image: character },
+    { name: 'Comics', path: '/comics', image: comic, dropdownItems: comicSeriesTitles },
+    { name: 'Stages', path: '/stages', image: stage },
+    { name: 'Gallery', path: '/gallery', image: gallery },
+    { name: 'Merch', path: '/merch', image: merch },
   ];
 
   return (
-    <nav className="smash-nav">
+    <nav className="smash-nav" aria-label="Main">
       {navItems.map((item) => (
         <div key={item.name} className="nav-item">
-          <Link to={item.path} className="nav-link" style={{ '--accent': item.color }}>
-            {item.image && <img src={item.image} alt={`${item.name} icon`} className="nav-icon" />}
+          <Link to={item.path} className="nav-link">
+            {item.image && <img src={item.image} alt="" className="nav-icon" />}
             <span className="nav-label">{item.name}</span>
-            {item.dropdownItems && <span className="nav-dropdown-icon" aria-hidden>▼</span>}
+            {item.dropdownItems && <span className="nav-dropdown-icon" aria-hidden>▾</span>}
           </Link>
           {item.dropdownItems && (
             <div className="nav-dropdown-menu">
@@ -169,9 +169,11 @@ function App()
     <Router>
       <header className="site-header">
         <Link to="/" className="site-logo">
-          <h1>Titan Forge</h1>
+          <span className="site-logo-text">Titan Forge</span>
         </Link>
-        <NavigationMenu />
+        <div className="site-header-nav-wrap">
+          <NavigationMenu />
+        </div>
         <HeaderSearch />
       </header>
       <Routes>

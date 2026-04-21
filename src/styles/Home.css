@@ -1,6 +1,14 @@
 /* Home — What’s New carousel */
 .home-page {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  box-sizing: border-box;
+  background: #ce9aed;
+  min-height: calc(100vh - 4rem);
+  min-height: calc(100svh - 4rem);
+  color: #1a1a1a;
   text-align: left;
+  padding: 1.5rem max(1rem, calc(50vw - 50% + 1rem)) 2.5rem;
 }
 
 .whats-new {

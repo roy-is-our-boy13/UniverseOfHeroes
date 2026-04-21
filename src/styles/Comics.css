@@ -1,6 +1,13 @@
 /* Comics page */
 .comics-page {
-  padding: 1.25rem 0 2rem;
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  box-sizing: border-box;
+  background: #ce9aed;
+  min-height: calc(100vh - 4rem);
+  min-height: calc(100svh - 4rem);
+  color: #1a1a1a;
+  padding: 1.5rem max(1rem, calc(50vw - 50% + 1rem)) 0;
 }
 
 .comics-page-title-image {
@@ -87,8 +94,8 @@
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   padding: 2.75rem max(1.5rem, calc(50vw - 50% + 1.5rem)) 3rem;
-  background: #f4f4f4;
-  border-top: 1px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.28);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   text-align: left;
 }
 

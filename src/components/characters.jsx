@@ -48,18 +48,29 @@ function Characters()
       <div className="characters-header">
         <img src={charactersTitle} alt="Characters title" className="characters-title-image" />
         
-        {/* 3. The Search Bar */}
         <div className="search-container">
-          <span className="search-icon">🔍</span>
-          <input
-            type="text"
-            placeholder="SEARCH"
-            className="search-input"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <label htmlFor="characters-search" className="characters-search-label">
+            Search characters
+          </label>
+          <div className="search-bar-field">
+            <span className="search-icon" aria-hidden>
+              🔍
+            </span>
+            <input
+              id="characters-search"
+              type="text"
+              placeholder="SEARCH"
+              className="search-input"
+              autoComplete="off"
+              onChange={(e) => setSearchTerm(e.target.value)}
+              value={searchTerm}
+            />
+          </div>
           <div className="search-stats">
-            <span>{filteredCharacters.length} RESULTS</span>
-            <span>SORT BY A-Z ∨</span>
+            <span className="search-stats-results">
+              {filteredCharacters.length} RESULTS
+            </span>
+            <span className="search-stats-sort">SORT BY A-Z v</span>
           </div>
         </div>
       </div>

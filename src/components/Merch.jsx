@@ -228,27 +228,54 @@ function Merch() {
           ) : (
             visibleItems.map((item) => (
               <article key={item.name} className="merch-product-card">
-                <button
-                  type="button"
-                  className="merch-product-card-button"
-                  onClick={() => setSelectedItem(item)}
-                  aria-haspopup="dialog"
-                  aria-label={`View details: ${item.name}`}
+                <div
+                  className={`merch-product-image${item.imageUrl ? ' merch-product-image--photo' : ''}`}
                 >
-                  <div
-                    className={`merch-product-image${item.imageUrl ? ' merch-product-image--photo' : ''}`}
-                    aria-hidden
-                  >
-                    {item.imageUrl && (
+                  {item.imageUrl && (
+                    <>
+                      <button
+                        type="button"
+                        className="merch-product-image-hit"
+                        onClick={() => setSelectedItem(item)}
+                        aria-haspopup="dialog"
+                        aria-label={`View details: ${item.name}`}
+                      />
                       <img
                         src={item.imageUrl}
                         alt=""
                         className="merch-product-image-img"
                         loading="lazy"
                       />
-                    )}
-                    <span className="merch-product-image-label">{item.tag}</span>
-                  </div>
+                      <span className="merch-product-image-label">{item.tag}</span>
+                      <button
+                        type="button"
+                        className="merch-product-grid-zoom"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setPdpImageIndex(0);
+                          setSelectedItem(item);
+                          setImageZoomOpen(true);
+                        }}
+                        aria-label={`View full screen image: ${item.name}`}
+                      >
+                        <svg className="merch-product-grid-zoom-icon" viewBox="0 0 24 24" aria-hidden>
+                          <path
+                            fill="currentColor"
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm4.5-4h-2V7.5H10V6h4V2h1.5v4H20v1.5h-6z"
+                          />
+                        </svg>
+                      </button>
+                    </>
+                  )}
+                  {!item.imageUrl && <span className="merch-product-image-label">{item.tag}</span>}
+                </div>
+                <button
+                  type="button"
+                  className="merch-product-text-btn"
+                  onClick={() => setSelectedItem(item)}
+                  aria-haspopup="dialog"
+                  aria-label={`View details: ${item.name}`}
+                >
                   <h3 className="merch-product-title">{item.name}</h3>
                   <p className="merch-product-price">
                     {item.price}

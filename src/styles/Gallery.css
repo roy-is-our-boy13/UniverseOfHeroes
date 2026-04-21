@@ -1,3 +1,112 @@
+/* Gallery route (Gallery.jsx) — dark full-bleed page */
+.gallery-page {
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  box-sizing: border-box;
+  background: #ce9aed;
+  min-height: calc(100vh - 4rem);
+  min-height: calc(100svh - 4rem);
+  color: #1a1a1a;
+  padding: 1.75rem 0 2.75rem;
+}
+
+.gallery-page-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 max(1rem, calc(50vw - 50% + 1rem));
+}
+
+.gallery-page-title-image {
+  display: block;
+  margin: 0 auto 1.75rem;
+  max-width: min(100%, 900px);
+  width: 100%;
+  height: auto;
+}
+
+.gallery-page-grid {
+  gap: 0.85rem;
+  max-width: 960px;
+}
+
+.gallery-page .gallery-page-grid-item {
+  border-radius: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-page-thumb-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  line-height: 0;
+  font: inherit;
+  appearance: none;
+}
+
+.gallery-page-thumb-btn:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 3px;
+}
+
+.gallery-page-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+  margin-top: 1.85rem;
+  padding-bottom: 0.35rem;
+}
+
+.gallery-page-nav-btn {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.gallery-page-nav-btn:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.gallery-page-nav-btn:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+}
+
+.gallery-page-nav-btn:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+.gallery-page-page-info {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  min-width: 4rem;
+  text-align: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
 /* Column Gallery */
 .column-gallery-wrapper {
   padding: 2rem 1rem;
@@ -53,6 +162,11 @@
   display: block;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+}
+
+/* Gallery page: portrait tiles, sharp corners (overrides rule above) */
+.gallery-page .gallery-page-grid-item img {
+  aspect-ratio: 3 / 4;
 }
 
 .column-gallery-image-button {
