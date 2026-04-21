@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { getCharacterHeroImageUrl } from '../../utils/characterHeroImage.js';
 import '../../styles/Gallery.css';
 
@@ -18,6 +19,24 @@ export default function CharacterHeroImage({ characterId, alt }) {
     return () => window.removeEventListener('keydown', onKey);
   }, [open]);
 
+  const lightbox =
+    open ? (
+      <div
+        className="gallery-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Full size portrait"
+        onClick={() => setOpen(false)}
+      >
+        <img
+          className="gallery-lightbox-image"
+          src={src}
+          alt={alt}
+          onClick={(e) => e.stopPropagation()}
+        />
+      </div>
+    ) : null;
+
   return (
     <>
       <div className="hero-banner-image">
@@ -30,22 +49,7 @@ export default function CharacterHeroImage({ characterId, alt }) {
           <img src={src} alt={alt} />
         </button>
       </div>
-      {open && (
-        <div
-          className="gallery-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Full size portrait"
-          onClick={() => setOpen(false)}
-        >
-          <img
-            className="gallery-lightbox-image"
-            src={src}
-            alt={alt}
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {typeof document !== 'undefined' && lightbox ? createPortal(lightbox, document.body) : null}
     </>
   );
 }

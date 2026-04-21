@@ -108,14 +108,29 @@ function NavigationMenu()
   );
 }
 
-function CopyRights()
-{
+const SITE_FOOTER_LINKS = [
+  ['Terms of Use', '#terms-of-use'],
+  ['Privacy Policy', '#privacy-policy'],
+  ['Your US State Privacy Rights', '#state-privacy-rights'],
+  ['Do Not Sell My Info', '#do-not-sell'],
+  ["Children's Online Privacy Policy", '#childrens-privacy'],
+  ['License Agreement', '#license'],
+  ['Interest-Based Ads', '#interest-based-ads'],
+];
+
+function SiteFooter() {
+  const year = new Date().getFullYear();
   return (
-    <div>
-      <p>
-        All characters depicted are properties of their respective owners.
-      </p>
-    </div>
+    <footer className="site-footer" role="contentinfo">
+      <div className="site-footer-bar">
+        {SITE_FOOTER_LINKS.map(([label, href]) => (
+          <a key={label} href={href} className="site-footer-link">
+            {label}
+          </a>
+        ))}
+        <span className="site-footer-copy">© {year} Titan Forge</span>
+      </div>
+    </footer>
   );
 }
 
@@ -210,10 +225,7 @@ function App()
         <Route path ="/chamuel" element={<Chamuel />} />
         <Route path ="/themessenger" element={<TheMessenger />} />
       </Routes>
-        <div>
-
-          <CopyRights />
-        </div>
+      <SiteFooter />
       </Router>
     </>
   );

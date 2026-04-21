@@ -81,7 +81,11 @@
 /* Hero-style character page (Fly Ron) */
 .hero-character-page {
   position: relative;
+  isolation: isolate;
   color: #111;
+  background: #fff;
+  min-height: calc(100vh - 4rem);
+  min-height: calc(100svh - 4rem);
 }
 
 .hero-page-bg {
@@ -97,18 +101,19 @@
 
 .hero-banner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   background: #fff;
-  border-bottom: 1px solid #e8e8e8;
-  min-height: 260px;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: min(42vw, 420px);
 }
 
 .hero-banner-image {
-  background: #f4f4f4;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: clamp(16px, 3vw, 32px);
+  box-sizing: border-box;
 }
 
 .hero-banner-image img {
@@ -143,34 +148,42 @@
 }
 
 .hero-banner-info {
-  background: #111;
-  color: #fff;
+  background: #d1d1d1;
+  color: #111;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 36px 44px;
+  padding: clamp(24px, 4vw, 48px) clamp(28px, 5vw, 56px);
   text-align: left;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
 }
 
 .hero-banner-eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  opacity: 0.75;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  color: #111;
+  margin: 0 0 0.65rem;
 }
 
 .hero-banner-name {
   margin: 0;
-  font-size: 2.2rem;
-  letter-spacing: 1px;
+  font-size: clamp(1.65rem, 4vw, 2.65rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
   text-transform: uppercase;
+  color: #111;
 }
 
 .hero-banner-subtitle {
-  margin: 10px 0 0;
-  font-size: 0.95rem;
-  opacity: 0.8;
+  margin: 0.85rem 0 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #333;
 }
 
 .hero-content {
@@ -450,4 +463,44 @@
 .read-the-docs 
 {
   color: #888;
+}
+
+/* Site footer — dark bar, legal links + copyright */
+.site-footer {
+  background: #000;
+  color: #999;
+  min-height: 11rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
+  padding: 2.5rem max(1rem, calc(50vw - 50% + 1rem)) 1.25rem;
+}
+
+.site-footer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem 1.25rem;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.site-footer-link {
+  color: #999;
+  text-decoration: none;
+}
+
+.site-footer-link:hover {
+  color: #c4c4c4;
+}
+
+.site-footer-copy {
+  color: #999;
+  white-space: nowrap;
 }
