@@ -11,7 +11,7 @@ function HowlWolf() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="howlwolf" alt="Howl Wolf" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Jack Fox</div>
           <h1 className="hero-banner-name">HOWL WOLF</h1>
         </div>
       </section>
@@ -42,7 +42,7 @@ function HowlWolf() {
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Cape Town, South Africa</dd>
             </div>
           </dl>
         </aside>

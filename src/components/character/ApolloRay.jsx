@@ -11,7 +11,7 @@ function ApolloRay() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="apolloray" alt="Apollo Ray" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN</div>
+          <div className="hero-banner-eyebrow">Rayvon Grey</div>
           <h1 className="hero-banner-name">APOLLO RAY</h1>
         </div>
       </section>

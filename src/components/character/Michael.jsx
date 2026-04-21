@@ -11,8 +11,7 @@ function Michael() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="michael" alt="Michael" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
-          <h1 className="hero-banner-name">MICHAEL</h1>
+          <h1 className="hero-banner-name">St. MICHAEL</h1>
           <p className="hero-banner-subtitle">Celestial Guardian</p>
         </div>
       </section>

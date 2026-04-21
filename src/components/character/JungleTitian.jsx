@@ -11,9 +11,8 @@ function JungleTitian() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="jungletitian" alt="Jungle Titan" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Billy</div>
           <h1 className="hero-banner-name">JUNGLE TITAN</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
