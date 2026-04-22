@@ -11,7 +11,7 @@ function Gabriel() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="gabriel" alt="Gabriel" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Blue Rev Comics</div>
           <h1 className="hero-banner-name">GABRIEL</h1>
           <p className="hero-banner-subtitle">Herald of Hope</p>
         </div>

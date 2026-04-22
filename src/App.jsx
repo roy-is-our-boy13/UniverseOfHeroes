@@ -7,7 +7,6 @@ import './App.css'
 import { seriesNameToSlug } from './components/Series/seriesSlugs.js';
 
 import Home from './components/Home.jsx';
-// Comcis
 import About from './components/About.jsx';
 import Comics from './components/Comics.jsx';
 import SeriesDetail from './components/Series/SeriesDetail.jsx';
@@ -16,7 +15,7 @@ import Stages from './components/Stages.jsx';
 import Gallery from './components/Gallery.jsx';
 import Merch from './components/Merch.jsx';
 
-//Chacter Paths
+//Character Paths
 import FlyRon from './components/character/FlyRon.jsx';
 import Crister from './components/character/Crister.jsx';
 import WildWrath from './components/character/WildWrath.jsx';
@@ -49,7 +48,7 @@ import character from './assets/imageIcon/Character.png';
 import stage  from './assets/imageIcon/Stage.png';
 import gallery  from './assets/imageIcon/Gallery.png';
 import merch from './assets/imageIcon/Merch.png';
-
+import blueRevComicsTitle from './assets/MainTitle/BlueRevComics.png';
 
 function NavigationMenu() 
 {
@@ -128,7 +127,7 @@ function SiteFooter() {
             {label}
           </a>
         ))}
-        <span className="site-footer-copy">© {year} Titan Forge</span>
+        <span className="site-footer-copy">© {year} Blue Rev Comics</span>
       </div>
     </footer>
   );
@@ -184,7 +183,11 @@ function App()
     <Router>
       <header className="site-header">
         <Link to="/" className="site-logo">
-          <span className="site-logo-text">Titan Forge</span>
+          <img
+            src={blueRevComicsTitle}
+            alt="Blue Rev Comics"
+            className="site-logo-image"
+          />
         </Link>
         <div className="site-header-nav-wrap">
           <NavigationMenu />

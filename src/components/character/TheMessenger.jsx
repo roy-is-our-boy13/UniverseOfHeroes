@@ -11,9 +11,8 @@ function TheMessenger() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="themessenger" alt="The Messenger" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Blue </div>
           <h1 className="hero-banner-name">THE MESSENGER</h1>
-          <p className="hero-banner-subtitle">Bearer of Word</p>
         </div>
       </section>
 

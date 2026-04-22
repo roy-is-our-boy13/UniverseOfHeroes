@@ -1,6 +1,6 @@
-# Universe of Heroes (Titan Forge)
+# Universe of Heroes (Blue Rev Comics)
 
-A React single-page app for the **Universe of Heroes** / **Titan Forge** brand: home, comics, characters, gallery, merch, and related content. Routing is handled with **React Router**.
+A React single-page app for the **Universe of Heroes** / **Blue Rev Comics** brand: home, comics, characters, gallery, merch, and related content. Routing is handled with **React Router**.
 
 ## Tech stack
 

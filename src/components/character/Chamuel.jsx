@@ -11,7 +11,7 @@ function Chamuel() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="chamuel" alt="Chamuel" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Blue Rev Comics</div>
           <h1 className="hero-banner-name">CHAMUEL</h1>
           <p className="hero-banner-subtitle">Keeper of Resolve</p>
         </div>

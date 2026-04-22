@@ -11,9 +11,8 @@ function ScreamWave() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="screamwave" alt="Scream Wave" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Kevin Brown</div>
           <h1 className="hero-banner-name">SCREAM WAVE</h1>
-          <p className="hero-banner-subtitle">Revered Lin Kuei Warrior</p>
         </div>
       </section>
 
@@ -43,7 +42,7 @@ function ScreamWave() {
             </div>
             <div className="hero-stat">
               <dt>Place of Origin</dt>
-              <dd>Unknown</dd>
+              <dd>Los Angeles, California</dd>
             </div>
           </dl>
         </aside>

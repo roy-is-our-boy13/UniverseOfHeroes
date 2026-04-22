@@ -11,7 +11,7 @@ function Ariel() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="ariel" alt="Ariel" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Blue Rev Comics</div>
           <h1 className="hero-banner-name">ARIEL</h1>
           <p className="hero-banner-subtitle">Spirit of the Current</p>
         </div>

@@ -11,7 +11,7 @@ function Azrael() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="azrael" alt="Azrael" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
+          <div className="hero-banner-eyebrow">Blue Rev Comics</div>
           <h1 className="hero-banner-name">AZRAEL</h1>
           <p className="hero-banner-subtitle">Blade of Judgment</p>
         </div>

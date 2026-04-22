@@ -11,7 +11,6 @@ function Uriel() {
       <section className="hero-banner">
         <CharacterHeroImage characterId="uriel" alt="Uriel" />
         <div className="hero-banner-info">
-          <div className="hero-banner-eyebrow">TITAN FORGE</div>
           <h1 className="hero-banner-name">URIEL</h1>
           <p className="hero-banner-subtitle">Watcher of Pathways</p>
         </div>
