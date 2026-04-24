@@ -53,6 +53,9 @@ import aegisTitle from '../../assets/SeriesLogos/AegislLuminarTitle.png';
 import aegisBg from '../../assets/otherImages/AegisLuminar1.png';
 import aegisCover from '../../assets/imagesCharacters/Aegis Luminar.png';
 
+import theMessengerTitle from '../../assets/SeriesLogos/TheMessengerTitle.png';
+import theMessengerCover from '../../assets/imagesCharacters/TheMessenger.png';
+
 function edition(title, date, coverImage, href = null) {
   return { title, date, coverImage, href };
 }
@@ -245,6 +248,17 @@ export const SERIES_BY_SLUG = {
     collectedEditions: [
       edition('Aegis Luminar: Litany', 'Apr 3, 2025', aegisCover),
       edition('Aegis Luminar: Last Bastion', 'Sep 17, 2025', aegisBg),
+    ],
+  },
+  'the-messenger': {
+    title: 'The Messenger',
+    description:
+      'THE MESSENGER moves between silence and signal, carrying truth where it is hardest to hear and binding scattered allies with a single, clear voice.',
+    heroImage: theMessengerTitle,
+    heroObjectFit: 'contain',
+    alliesLinks: [{ name: 'The Messenger', path: '/themessenger' }],
+    collectedEditions: [
+      edition('The Messenger: Signal & Silence', 'Mar 1, 2025', theMessengerCover),
     ],
   },
 };

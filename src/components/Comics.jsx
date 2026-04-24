@@ -25,9 +25,7 @@ const SERIES_ALL = [
   'The Messenger',
 ];
 
-/** Series that open a character page instead of a comic series detail route. */
 function seriesListLinkPath(name) {
-  if (name === 'The Messenger') return '/themessenger';
   return `/comics/series/${seriesNameToSlug(name)}`;
 }
 
