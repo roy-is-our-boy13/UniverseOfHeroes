@@ -2,24 +2,27 @@ import cashCircuits from '../../assets/Comics/Cash & Circuits_ Bank Heist Gone R
 import shadowBlade from '../../assets/Comics/Shadow Blade_ Ninja Hunter.pdf';
 import brokenBadge from '../../assets/Comics/Shadows of the Broken Badge.pdf';
 
-import flyRonBg from '../../assets/Wallpaper/FlyRonBackground.png';
+import flyRonTitle from '../../assets/SeriesLogos/FlyRonTitle.png';
 import flyRonCover from '../../assets/imagesCharacters/FlyRon.png';
 import flyRonArt from '../../assets/otherImages/FlyRonArt.png';
 
+import wildWrathTitle from '../../assets/SeriesLogos/WildWrathTitle.png';
 import wildWrathBg from '../../assets/Wallpaper/WildWrathWallpaper.png';
 import wildWrathCover from '../../assets/imagesCharacters/WildWrath.png';
 import wildWrath1 from '../../assets/otherImages/WildWrath1.png';
 
+import redManTitle from '../../assets/SeriesLogos/RedManTitle.png';
 import redManBg from '../../assets/otherImages/RedMan1.png';
 import redManCover from '../../assets/imagesCharacters/RedMan.png';
 
 import ravenBg from '../../assets/otherImages/RavenVanguardComicPage.png';
 import ravenCover from '../../assets/imagesCharacters/RavenVangaurd.png';
 
+import humanStrikeTitle from '../../assets/SeriesLogos/HumanStrikeTitle.png';
 import humanStrikeBg from '../../assets/otherImages/HumanStrike1.png';
 import humanStrikeCover from '../../assets/imagesCharacters/HumanStrike.png';
 
-import cristerBg from '../../assets/Wallpaper/CristerBackground.png';
+import cristerTitle from '../../assets/SeriesLogos/CristerTitle.png';
 import cristerCover from '../../assets/imagesCharacters/Crister.png';
 import cristerArt from '../../assets/otherImages/CristerArt.png';
 
@@ -27,23 +30,26 @@ import terraBg from '../../assets/otherImages/CharactersTitle.png';
 import terraA from '../../assets/otherImages/MessengerPoster.png';
 import terraB from '../../assets/otherImages/JungleTitian1.png';
 
-import morphoBg from '../../assets/Wallpaper/MorphoManBackground.png';
+import morphoTitle from '../../assets/SeriesLogos/MorphoManTitle.png';
 import morphoCover from '../../assets/imagesCharacters/MorphoMan.png';
 import morpho1 from '../../assets/otherImages/MorphoMan1.png';
 
+import flitterTitle from '../../assets/SeriesLogos/FlitterMouseTitle.png';
 import flitterBg from '../../assets/otherImages/FlitterMouse1.png';
 import flitterCover from '../../assets/imagesCharacters/FlitterMouse.png';
 
 import reflectorCover from '../../assets/imagesCharacters/Reflector.png';
 import reflectorPose from '../../assets/imagePose/RefectorPose.png';
 
-import apolloBg from '../../assets/otherImages/ApolloRayPoster.png';
+import apolloTitle from '../../assets/SeriesLogos/ApolloRayTitle.png';
 import apolloCover from '../../assets/imagesCharacters/ApolloRay.png';
 import apolloArt from '../../assets/otherImages/ApolloRayArt.png';
 
+import jungleTitle from '../../assets/SeriesLogos/JungleTitianTitle.png';
 import jungleBg from '../../assets/otherImages/JungleTitian1.png';
 import jungleCover from '../../assets/imagesCharacters/JungleTitan.png';
 
+import aegisTitle from '../../assets/SeriesLogos/AegislLuminarTitle.png';
 import aegisBg from '../../assets/otherImages/AegisLuminar1.png';
 import aegisCover from '../../assets/imagesCharacters/Aegis Luminar.png';
 
@@ -57,7 +63,8 @@ export const SERIES_BY_SLUG = {
     title: 'Fly Ron',
     description:
       'High above the city, FLY RON patrols the skyline—part stunt pilot, part vigilante. When a syndicate threatens innocent lives, he trades calm for courage and proves that HEROES do not need capes to leave a mark.',
-    heroImage: flyRonBg,
+    heroImage: flyRonTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Fly Ron', path: '/flyron' }],
     collectedEditions: [
       edition('Fly Ron: City Wings', 'Mar 4, 2025', flyRonCover),
@@ -69,7 +76,8 @@ export const SERIES_BY_SLUG = {
     title: 'Wild Wrath',
     description:
       'WILD WRATH channels the fury of the storm. Exiled and underestimated, he returns to settle scores with honor—RAW POWER tempered by a code no villain can break.',
-    heroImage: wildWrathBg,
+    heroImage: wildWrathTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Wild Wrath', path: '/wildwrath' }],
     collectedEditions: [
       edition('Wild Wrath: Book One', 'Jan 21, 2025', wildWrathCover),
@@ -95,7 +103,8 @@ export const SERIES_BY_SLUG = {
     title: 'Red Man',
     description:
       'The RED MAN moves like a warning light—fast, bright, impossible to ignore. In a world of gray alliances, he fights so the TRUTH stays visible.',
-    heroImage: redManBg,
+    heroImage: redManTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Red Man', path: '/redman' }],
     collectedEditions: [
       edition('Red Man: Crimson Line', 'Feb 11, 2025', redManCover),
@@ -127,7 +136,8 @@ export const SERIES_BY_SLUG = {
     title: 'Human Strike',
     description:
       'HUMAN STRIKE proves ordinary courage still beats supernatural odds. Every punch is earned; every victory costs something—and the READ never gets easy.',
-    heroImage: humanStrikeBg,
+    heroImage: humanStrikeTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Human Strike', path: '/humanstrike' }],
     collectedEditions: [
       edition('Human Strike: First Contact', 'May 5, 2025', humanStrikeCover),
@@ -138,7 +148,8 @@ export const SERIES_BY_SLUG = {
     title: 'Crister',
     description:
       'CRISTER walks the line between icon and outlaw. Brilliant, stubborn, and haunted by CHOICES that echo across the city—this is street-level mythmaking.',
-    heroImage: cristerBg,
+    heroImage: cristerTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Crister', path: '/crister' }],
     collectedEditions: [
       edition('Crister: Cold Open', 'Mar 28, 2025', cristerCover),
@@ -169,7 +180,8 @@ export const SERIES_BY_SLUG = {
     title: 'Morpho Man',
     description:
       'MORPHO MAN shifts shape to survive. Identity becomes both weapon and wound in a thriller about who you are when you can be ANYONE.',
-    heroImage: morphoBg,
+    heroImage: morphoTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Morpho Man', path: '/morphoman' }],
     collectedEditions: [
       edition('Morpho Man: Masks', 'Apr 19, 2025', morphoCover),
@@ -180,7 +192,8 @@ export const SERIES_BY_SLUG = {
     title: 'Flitter Mouse',
     description:
       'Small, quick, and sharper than she looks—FLITTER MOUSE turns scrapyards into workshops and setbacks into WINS. Hopeful, kinetic, and full of heart.',
-    heroImage: flitterBg,
+    heroImage: flitterTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Flitter Mouse', path: '/flittermouse' }],
     collectedEditions: [
       edition('Flitter Mouse: Little Thunder', 'Jan 9, 2025', flitterCover),
@@ -202,7 +215,8 @@ export const SERIES_BY_SLUG = {
     title: 'Apollo Ray',
     description:
       'APOLLO RAY brings sunlight to the fight—charisma, precision, and a streak of defiance bright enough to burn through CONSPIRACY and fear.',
-    heroImage: apolloBg,
+    heroImage: apolloTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Apollo Ray', path: '/apolloray' }],
     collectedEditions: [
       edition('Apollo Ray: Dawn Patrol', 'May 27, 2025', apolloCover),
@@ -213,7 +227,8 @@ export const SERIES_BY_SLUG = {
     title: 'Jungle Titan',
     description:
       'Deep green canopy, older magic, and a guardian who will not yield—JUNGLE TITAN is SURVIVAL myth turned modern epic.',
-    heroImage: jungleBg,
+    heroImage: jungleTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Jungle Titan', path: '/jungletitian' }],
     collectedEditions: [
       edition('Jungle Titan: Green Throne', 'Feb 26, 2025', jungleCover),
@@ -224,7 +239,8 @@ export const SERIES_BY_SLUG = {
     title: 'Aegis Luminar',
     description:
       'AEGIS LUMINAR carries shields of light—protector, tactician, and last line when darkness masses at the gate. Honor is not passive; it is FORGED.',
-    heroImage: aegisBg,
+    heroImage: aegisTitle,
+    heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Aegis Luminar', path: '/aegisluminar' }],
     collectedEditions: [
       edition('Aegis Luminar: Litany', 'Apr 3, 2025', aegisCover),

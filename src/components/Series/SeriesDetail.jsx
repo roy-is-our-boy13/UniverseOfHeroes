@@ -34,7 +34,13 @@ export default function SeriesDetail() {
     <article className="series-detail-page">
       {series.showHero !== false && (
         <div className="series-detail-hero">
-          <img src={series.heroImage} alt="" className="series-detail-hero-img" decoding="async" />
+          <img
+            src={series.heroImage}
+            alt={series.title}
+            className="series-detail-hero-img"
+            style={series.heroObjectFit ? { objectFit: series.heroObjectFit } : undefined}
+            decoding="async"
+          />
         </div>
       )}
 

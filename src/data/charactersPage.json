@@ -22,6 +22,7 @@
     { "name": "Ariel", "path": "/ariel" },
     { "name": "Azrael", "path": "/azrael" },
     { "name": "Chamuel", "path": "/chamuel" },
+    { "name": "Vivid Valley Muse", "path": "/vividvalleymuse" },
     { "name": "The Messenger", "path": "/themessenger", "imageFile": "TheMessenger.png" }
   ]
 }
