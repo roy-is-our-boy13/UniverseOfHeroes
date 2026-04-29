@@ -173,29 +173,39 @@ function PhotoGallery()
   }, [activeIndex]);
 
   return (
-    <>
-    <h2>Featured Comics</h2>
-    <div className="gallery-container">
-      
-      <button className="arrow left" onClick={scrollLeft}>
-        ◀
-      </button>
-
-      <div className="gallery-wrapper" ref={scrollRef}>
-        {images.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`Gallery ${index}`}
-            className="gallery-image"
-            onClick={() => setActiveIndex(index)}
-          />
-        ))}
+    <section className="home-feature-section" aria-labelledby="featured-comics-heading">
+      <h2 id="featured-comics-heading" className="home-feature-heading">
+        Featured Comics
+      </h2>
+      <div className="home-feature-panel">
+        <button
+          type="button"
+          className="home-feature-nav home-feature-nav--prev"
+          onClick={scrollLeft}
+          aria-label="Scroll featured comics left"
+        >
+          <span className="home-feature-nav-triangle home-feature-nav-triangle--left" aria-hidden />
+        </button>
+        <button
+          type="button"
+          className="home-feature-nav home-feature-nav--next"
+          onClick={scrollRight}
+          aria-label="Scroll featured comics right"
+        >
+          <span className="home-feature-nav-triangle home-feature-nav-triangle--right" aria-hidden />
+        </button>
+        <div className="gallery-wrapper home-feature-track" ref={scrollRef}>
+          {images.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Featured comic ${index + 1}`}
+              className="gallery-image"
+              onClick={() => setActiveIndex(index)}
+            />
+          ))}
+        </div>
       </div>
-
-      <button className="arrow right" onClick={scrollRight}>
-        ▶
-      </button>
 
       {activeIndex !== null && (
         <div
@@ -207,13 +217,12 @@ function PhotoGallery()
           <img
             className="gallery-lightbox-image"
             src={images[activeIndex]}
-            alt={`Enlarged gallery ${activeIndex}`}
+            alt={`Enlarged gallery ${activeIndex + 1}`}
             onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
-    </div>
-    </>
+    </section>
   );
 }
 
@@ -238,30 +247,40 @@ function VideoGallery() {
   ];
 
   return (
-    <>  
-    <h2>Featured Videos</h2>
-    <div className="gallery-container">
-      <button className="arrow left" onClick={scrollLeft}>
-        ◀
-      </button>
-
-      <div className="gallery-wrapper" ref={scrollRef}>
-        {videos.map((video, index) => (
-          <video
-            key={index}
-            src={video}
-            controls
-            preload="metadata"
-            className="gallery-video"
-          />
-        ))}
+    <section className="home-feature-section" aria-labelledby="featured-videos-heading">
+      <h2 id="featured-videos-heading" className="home-feature-heading">
+        Featured Videos
+      </h2>
+      <div className="home-feature-panel">
+        <button
+          type="button"
+          className="home-feature-nav home-feature-nav--prev"
+          onClick={scrollLeft}
+          aria-label="Scroll featured videos left"
+        >
+          <span className="home-feature-nav-triangle home-feature-nav-triangle--left" aria-hidden />
+        </button>
+        <button
+          type="button"
+          className="home-feature-nav home-feature-nav--next"
+          onClick={scrollRight}
+          aria-label="Scroll featured videos right"
+        >
+          <span className="home-feature-nav-triangle home-feature-nav-triangle--right" aria-hidden />
+        </button>
+        <div className="gallery-wrapper home-feature-track" ref={scrollRef}>
+          {videos.map((video, index) => (
+            <video
+              key={index}
+              src={video}
+              controls
+              preload="metadata"
+              className="gallery-video"
+            />
+          ))}
+        </div>
       </div>
-
-      <button className="arrow right" onClick={scrollRight}>
-        ▶
-      </button>
-    </div>
-    </>  
+    </section>
   );
 }
 

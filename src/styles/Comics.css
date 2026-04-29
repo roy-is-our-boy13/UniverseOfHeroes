@@ -10,12 +10,191 @@
   padding: 1.5rem max(1rem, calc(50vw - 50% + 1rem)) 0;
 }
 
-.comics-page-title-image {
+.comics-hero {
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  background: #241438;
+  padding: 2.5rem max(3.5rem, calc(50vw - 50% + 1.25rem)) 2.75rem;
+  margin-bottom: 1.35rem;
+  text-align: left;
+  /* Set background-image here when art is ready */
+}
+
+.comics-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+}
+
+.comics-hero-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  font: inherit;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.comics-hero-arrow:hover {
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.comics-hero-arrow:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.comics-hero-arrow--prev {
+  left: clamp(0.65rem, 3vw, 1.25rem);
+}
+
+.comics-hero-arrow--next {
+  right: clamp(0.65rem, 3vw, 1.25rem);
+}
+
+.comics-hero-arrow-icon {
   display: block;
-  margin: 0 auto 1rem;
-  max-width: min(100%, 900px);
-  width: 100%;
-  height: auto;
+  margin-left: -2px;
+}
+
+.comics-hero-arrow--next .comics-hero-arrow-icon {
+  margin-left: 2px;
+}
+
+.comics-hero-tag {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #fff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #fff;
+  text-transform: uppercase;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.comics-hero-headline {
+  margin: 0 0 1.35rem;
+  font-size: clamp(1.375rem, 4.2vw, 2.125rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+.comics-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.9rem;
+  background: #4a2d6e;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  transform: skewX(-14deg);
+  transition: background 0.15s ease, filter 0.15s ease;
+}
+
+.comics-hero-cta:hover {
+  background: #5b3d86;
+  filter: brightness(1.03);
+}
+
+.comics-hero-cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.comics-hero-cta-label {
+  display: inline-block;
+  transform: skewX(14deg);
+}
+
+.comics-samples {
+  text-align: left;
+}
+
+.comics-samples-heading {
+  margin: 0;
+  padding-bottom: 0.65rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #6b7280;
+  font-size: 1.65rem;
+  font-weight: 700;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  color: #000;
+  letter-spacing: 0.01em;
+}
+
+.comics-preview-subheading {
+  margin-top: 2.25rem;
+}
+
+.comics-preview-empty {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: #444;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
 }
 
 .comics-row {
@@ -74,7 +253,7 @@
   margin-top: auto;
   display: inline-block;
   text-decoration: none;
-  background: #d42026;
+  background: #4a2d6e;
   color: #fff;
   font-weight: 600;
   font-size: 0.82rem;
@@ -85,7 +264,7 @@
 }
 
 .comic-read-button:hover {
-  background: #b8161b;
+  background: #5b3d86;
 }
 
 /* Comics — All Series list (under PDF cards) */

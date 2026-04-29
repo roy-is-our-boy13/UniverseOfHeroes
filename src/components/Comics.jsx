@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Comics.css';
-import comicsLogoTitle from '../assets/PageTitles/ComicsLogoTitle.png';
 import { seriesNameToSlug } from './Series/seriesSlugs.js';
 import cashCircuits from '../assets/Comics/Cash & Circuits_ Bank Heist Gone Rogue.pdf';
 import shadowBlade from '../assets/Comics/Shadow Blade_ Ninja Hunter.pdf';
@@ -26,6 +25,22 @@ const SERIES_ALL = [
   'Vivid Alley Muse',
 ];
 
+/** Hero banner slides — add entries to enable carousel; one slide still shows arrows. */
+const COMICS_HERO_SLIDES = [
+  {
+    tag: "'UNIVERSE OF HEROES'",
+    headline: 'Bold heroes, wild plots, and comics you can dive into today',
+    ctaHref: '#comics-samples-heading',
+    ctaLabel: 'Read now!',
+  },
+  {
+    tag: "'BLUE REV COMICS'",
+    headline: 'Explore series, free samples, and the full universe of heroes',
+    ctaHref: '#comics-samples-heading',
+    ctaLabel: 'Read now!',
+  },
+];
+
 function seriesListLinkPath(name) {
   return `/comics/series/${seriesNameToSlug(name)}`;
 }
@@ -46,9 +61,51 @@ function chunkIntoColumns(items, columnCount = 3) {
   return cols;
 }
 
+function ComicCardsGrid({ comics }) {
+  return (
+    <div className="comics-row">
+      {comics.map((comic, index) => (
+        <article key={index} className="comic-card">
+          <a
+            href={comic.file}
+            target="_blank"
+            rel="noreferrer"
+            className="comic-cover-link"
+            aria-label={`Open ${comic.title} PDF`}
+          >
+            <iframe
+              src={`${comic.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+              title={`${comic.title} preview`}
+              className="comic-cover-preview"
+            />
+          </a>
+
+          <h3 className="comic-title">
+            {comic.title}
+            <span className="comic-subtitle">{comic.subtitle}</span>
+          </h3>
+          <p className="comic-creators">{comic.creators}</p>
+
+          <a href={comic.file} target="_blank" rel="noreferrer" className="comic-read-button">
+            Read PDF
+          </a>
+        </article>
+      ))}
+    </div>
+  );
+}
+
 function Comics() {
   const [seriesSearch, setSeriesSearch] = useState('');
   const [activeLetter, setActiveLetter] = useState('');
+  const [heroSlideIndex, setHeroSlideIndex] = useState(0);
+
+  const heroSlide = COMICS_HERO_SLIDES[heroSlideIndex] ?? COMICS_HERO_SLIDES[0];
+  const heroSlideCount = COMICS_HERO_SLIDES.length;
+
+  const goHeroPrev = () =>
+    setHeroSlideIndex((i) => (i - 1 + heroSlideCount) % heroSlideCount);
+  const goHeroNext = () => setHeroSlideIndex((i) => (i + 1) % heroSlideCount);
 
   const comicFiles = [
     {
@@ -71,6 +128,12 @@ function Comics() {
     }
   ];
 
+  /** Same shape as `comicFiles`; add PDF imports + objects here when you have a new release. */
+  const newReleaseComics = [];
+
+  /** Same shape as `comicFiles`; spotlight your best-selling issues here. */
+  const bestSellingComics = [];
+
   const filteredSeries = useMemo(() => {
     const query = seriesSearch.trim().toLowerCase();
     const afterSearch = !query ? SERIES_ALL : SERIES_ALL.filter((name) => name.toLowerCase().includes(query));
@@ -87,41 +150,75 @@ function Comics() {
 
   return (
     <section className="comics-page">
-      <img
-        src={comicsLogoTitle}
-        alt="Universe Of Heroes Comics"
-        className="comics-page-title-image"
-      />
+      <header className="comics-hero" id="comics-hero" role="banner">
+        <button
+          type="button"
+          className="comics-hero-arrow comics-hero-arrow--prev"
+          onClick={goHeroPrev}
+          aria-label="Previous featured comic"
+        >
+          <svg className="comics-hero-arrow-icon" width="14" height="24" viewBox="0 0 14 24" aria-hidden>
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 2L3 12l9 10"
+            />
+          </svg>
+        </button>
+        <button
+          type="button"
+          className="comics-hero-arrow comics-hero-arrow--next"
+          onClick={goHeroNext}
+          aria-label="Next featured comic"
+        >
+          <svg className="comics-hero-arrow-icon" width="14" height="24" viewBox="0 0 14 24" aria-hidden>
+            <path
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M2 2l9 10-9 10"
+            />
+          </svg>
+        </button>
 
-      <div className="comics-row">
-        {comicFiles.map((comic, index) => (
-          <article key={index} className="comic-card">
-            <a
-              href={comic.file}
-              target="_blank"
-              rel="noreferrer"
-              className="comic-cover-link"
-              aria-label={`Open ${comic.title} PDF`}
-            >
-              <iframe
-                src={`${comic.file}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                title={`${comic.title} preview`}
-                className="comic-cover-preview"
-              />
-            </a>
+        <div className="comics-hero-inner">
+          <p className="comics-hero-tag">{heroSlide.tag}</p>
+          <h1 className="comics-hero-headline">{heroSlide.headline}</h1>
+          <a href={heroSlide.ctaHref} className="comics-hero-cta">
+            <span className="comics-hero-cta-label">{heroSlide.ctaLabel}</span>
+          </a>
+        </div>
+      </header>
 
-            <h3 className="comic-title">
-              {comic.title}
-              <span className="comic-subtitle">{comic.subtitle}</span>
-            </h3>
-            <p className="comic-creators">{comic.creators}</p>
+      <section className="comics-samples" aria-label="Samples, new releases, and best sellers">
+        <h2 id="comics-samples-heading" className="comics-samples-heading">
+          Samples
+        </h2>
+        <ComicCardsGrid comics={comicFiles} />
 
-            <a href={comic.file} target="_blank" rel="noreferrer" className="comic-read-button">
-              Read PDF
-            </a>
-          </article>
-        ))}
-      </div>
+        <h2 id="comics-new-release-heading" className="comics-samples-heading comics-preview-subheading">
+          New Release
+        </h2>
+        {newReleaseComics.length > 0 ? (
+          <ComicCardsGrid comics={newReleaseComics} />
+        ) : (
+          <p className="comics-preview-empty">New releases will appear here soon.</p>
+        )}
+
+        <h2 id="comics-best-selling-heading" className="comics-samples-heading comics-preview-subheading">
+          Best Selling
+        </h2>
+        {bestSellingComics.length > 0 ? (
+          <ComicCardsGrid comics={bestSellingComics} />
+        ) : (
+          <p className="comics-preview-empty">Best sellers will appear here soon.</p>
+        )}
+      </section>
 
       <section className="comics-all-series" aria-labelledby="comics-all-series-heading">
         <div className="comics-all-series-inner">
