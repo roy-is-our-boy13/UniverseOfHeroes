@@ -26,7 +26,7 @@ import cristerTitle from '../../assets/SeriesLogos/CristerTitle.png';
 import cristerCover from '../../assets/imagesCharacters/Crister.png';
 import cristerArt from '../../assets/otherImages/CristerArt.png';
 
-import terraBg from '../../assets/otherImages/CharactersTitle.png';
+import terraWarriorsTitle from '../../assets/SeriesLogos/TerraWarriorsTitle.png';
 import terraA from '../../assets/otherImages/MessengerPoster.png';
 import terraB from '../../assets/otherImages/JungleTitian1.png';
 
@@ -55,6 +55,8 @@ import aegisCover from '../../assets/imagesCharacters/Aegis Luminar.png';
 
 import theMessengerTitle from '../../assets/SeriesLogos/TheMessengerTitle.png';
 import theMessengerCover from '../../assets/imagesCharacters/TheMessenger.png';
+
+import vividAlleyMuseTitle from '../../assets/SeriesLogos/VividAlleyMuseTitle.png';
 
 function edition(title, date, coverImage, href = null) {
   return { title, date, coverImage, href };
@@ -163,8 +165,8 @@ export const SERIES_BY_SLUG = {
     title: 'Terra Warriors',
     description:
       'When ancient seals break, the TERRA WARRIORS rise—champions bound to land, sea, and sky. Their battles decide whether the world KEEPS its balance.',
-    heroImage: terraBg,
-    showHero: false,
+    heroImage: terraWarriorsTitle,
+    heroObjectFit: 'contain',
     /** Profile routes match `characters.jsx` (same as the Characters grid). */
     alliesLinks: [
       { name: 'Fly Ron', path: '/flyron' },
@@ -259,6 +261,21 @@ export const SERIES_BY_SLUG = {
     alliesLinks: [{ name: 'The Messenger', path: '/themessenger' }],
     collectedEditions: [
       edition('The Messenger: Signal & Silence', 'Mar 1, 2025', theMessengerCover),
+    ],
+  },
+  'vivid-alley-muse': {
+    title: 'Vivid Alley Muse',
+    description:
+      'VIVID ALLEY MUSE blends streetwise instinct with Hero Layer grit—stories told in neon, courage found in the alleys, and heart that will not stay quiet.',
+    heroImage: vividAlleyMuseTitle,
+    heroObjectFit: 'contain',
+    alliesLinks: [{ name: 'Vivid Valley Muse', path: '/vividvalleymuse' }],
+    collectedEditions: [
+      edition(
+        'Vivid Alley Muse: Hero Layer',
+        'Apr 29, 2026',
+        'https://res.cloudinary.com/dlwqeqsev/image/upload/v1777490104/FlyRonAndVividAlley_uyhnhc.png'
+      ),
     ],
   },
 };

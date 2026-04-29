@@ -23,6 +23,7 @@ const SERIES_ALL = [
   'Aegis Luminar',
   'Wild Reign',
   'The Messenger',
+  'Vivid Alley Muse',
 ];
 
 function seriesListLinkPath(name) {

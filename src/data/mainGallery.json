@@ -9,6 +9,10 @@
     { "src": "../assets/otherImages/RavenVanguardComicPage.png", "alt": "Raven Vanguard comic page" },
     { "src": "../assets/otherImages/CristerComicPage.png", "alt": "Crister comic page" },
     { "src": "../assets/otherImages/FlyRonComicPage.png", "alt": "Fly Ron comic page" },
+    {
+      "src": "https://res.cloudinary.com/dlwqeqsev/image/upload/v1777490104/FlyRonAndVividAlley_uyhnhc.png",
+      "alt": "Fly Ron and Vivid Valley Muse at Hero Layer command center"
+    },
     { "src": "../assets/otherImages/ApolloRayPoster.png", "alt": "Apollo Ray poster" },
     { "src": "../assets/otherImages/MessangerPic2.png", "alt": "Messenger illustration" },
     { "src": "../assets/otherImages/FlyRonPoseter.png", "alt": "Fly Ron poster" },

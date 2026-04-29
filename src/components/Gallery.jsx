@@ -63,19 +63,21 @@ function Gallery() {
           alt="Gallery"
           className="gallery-page-title-image"
         />
-        <div className="gallery-grid gallery-page-grid">
-          {visibleItems.map((item, index) => (
-            <div key={start + index} className="gallery-grid-item gallery-page-grid-item">
-              <button
-                type="button"
-                className="gallery-page-thumb-btn"
-                onClick={() => setActiveIndex(start + index)}
-                aria-label={`Open image: ${item.alt}`}
-              >
-                <img src={item.img} alt={item.alt} />
-              </button>
-            </div>
-          ))}
+        <div className="gallery-page-panel">
+          <div className="gallery-grid gallery-page-grid">
+            {visibleItems.map((item, index) => (
+              <div key={start + index} className="gallery-grid-item gallery-page-grid-item">
+                <button
+                  type="button"
+                  className="gallery-page-thumb-btn"
+                  onClick={() => setActiveIndex(start + index)}
+                  aria-label={`Open image: ${item.alt}`}
+                >
+                  <img src={item.img} alt={item.alt} />
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="gallery-page-pagination">
           <button
