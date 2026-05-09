@@ -156,6 +156,7 @@ export const SERIES_BY_SLUG = {
     heroImage: cristerTitle,
     heroObjectFit: 'contain',
     alliesLinks: [{ name: 'Crister', path: '/crister' }],
+    villainsLinks: [{ name: 'Dark Prophet', path: '/characters' }],
     collectedEditions: [
       edition('Crister: Cold Open', 'Mar 28, 2025', cristerCover),
       edition('Crister: Night Markets', 'Jul 7, 2025', cristerArt),
