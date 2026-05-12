@@ -27,6 +27,7 @@ import cristerCover from '../../assets/imagesCharacters/Crister.png';
 import cristerArt from '../../assets/otherImages/CristerArt.png';
 
 import terraWarriorsTitle from '../../assets/SeriesLogos/TerraWarriorsTitle.png';
+import terraWarriorsDetail from '../../assets/otherImages/TerraWarriors.png';
 import terraA from '../../assets/otherImages/MessengerPoster.png';
 import terraB from '../../assets/otherImages/JungleTitian1.png';
 
@@ -62,7 +63,7 @@ function edition(title, date, coverImage, href = null) {
   return { title, date, coverImage, href };
 }
 
-/** @type {Record<string, { title: string; description: string; heroImage: string; collectedEditions: ReturnType<typeof edition>[] }>} */
+/** @type {Record<string, { title: string; description: string; heroImage: string; collectedEditions: ReturnType<typeof edition>[]; detailImage?: string; detailImageAlt?: string }>} */
 export const SERIES_BY_SLUG = {
   'fly-ron': {
     title: 'Fly Ron',
@@ -168,6 +169,8 @@ export const SERIES_BY_SLUG = {
       'When ancient seals break, the TERRA WARRIORS rise—champions bound to land, sea, and sky. Their battles decide whether the world KEEPS its balance.',
     heroImage: terraWarriorsTitle,
     heroObjectFit: 'contain',
+    detailImage: terraWarriorsDetail,
+    detailImageAlt: 'Terra Warriors lineup artwork',
     /** Profile routes match `characters.jsx` (same as the Characters grid). */
     alliesLinks: [
       { name: 'Fly Ron', path: '/flyron' },

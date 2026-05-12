@@ -51,6 +51,17 @@ export default function SeriesDetail() {
 
         <h1 className="series-detail-title">{series.title}</h1>
 
+        {series.detailImage != null && (
+          <div className="series-detail-body-image-wrap">
+            <img
+              src={series.detailImage}
+              alt={series.detailImageAlt ?? ''}
+              className="series-detail-body-image"
+              decoding="async"
+            />
+          </div>
+        )}
+
         <p className="series-detail-description">{series.description}</p>
 
         <div className="series-detail-main">
